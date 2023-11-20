@@ -1,0 +1,16 @@
+.slick-prev:before {
+  color: orange;
+}
+.slick-next:before {
+  color: orange;
+}
+
+.icon {
+  font-size: 30px;
+  color: yellow;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+  &:hover {
+    scale: 1.1;
+  }
+}
