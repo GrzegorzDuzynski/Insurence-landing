@@ -30,7 +30,7 @@ export const StyledHeaderContainer = styled.div`
 `;
 
 export const StyledBox = styled.div`
-  width: 500px;
+  width: 600px;
   position: relative;
 
   display: flex;

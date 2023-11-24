@@ -46,32 +46,29 @@ export const StyledBoxBottom = styled.div`
 `;
 
 export const StyledTitle = styled.h1`
-  color: ${({ theme }) => theme.firstColor};
+  color: ${({ theme }) => theme.zeroColor};
   font-size: 24px;
+  font-weight: 400;
   letter-spacing: 2px;
   text-align: center;
 `;
 
 export const StyledText = styled.p`
   font-size: 12px;
-  color: ${({ theme }) => theme.fiveColor};
+  color: ${({ theme }) => theme.zeroColor};
 `;
 
 export const StyledButton = styled.button`
-  /* width: 230px; */
-  /* background-color: ${({ theme }) => theme.firstColor}; */
   background-color: transparent;
-  color: ${({ theme }) => theme.fiveColor};
-
+  color: ${({ theme }) => theme.zeroColor};
   padding: 8px;
-  border: 2px solid ${({ theme }) => theme.firstColor};
-
+  border: 2px solid ${({ theme }) => theme.thirdColor};
   font-weight: 600;
   border-radius: 3px;
   transition: 0.5s ease-in;
-  /* align-self: flex-end; */
+
   &:hover {
-    background-color: ${({ theme }) => theme.firstColor};
+    background-color: ${({ theme }) => theme.thirdColor};
     color: ${({ theme }) => theme.fiveColor};
   }
 `;

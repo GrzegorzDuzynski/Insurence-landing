@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-// import "https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;800&family=Lobster&family=Montserrat:ital,wght@0,300;0,400;1,200&display=swap";
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -11,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body{
-        font-family:Arial, Helvetica, sans-serif;
+        font-family:Inter, sans-serif;
         background-color:gray
     }
 

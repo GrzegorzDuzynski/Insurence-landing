@@ -12,6 +12,7 @@ import { Route } from "react-router-dom";
 import "./app.css";
 import Cooperations from "./components/Cooperations";
 import Offer from "./components/Offer";
+import Registration from "./components/Registration";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <main>
         <Hero id="Hero" />
         <Offer />
+        <Registration />
         <About id="About" />
         <Reputation />
         <Stats />

@@ -1,16 +1,34 @@
 import styled from "styled-components";
+import foto from "../zolty_punkt_ubezpieczen.JPG";
 
 export const StyledContainer = styled.div`
-  background-color: ${({ theme }) => theme.fiveColor};
+  height: 100vh;
   margin: 0 auto;
   padding: 30px;
   position: relative;
 
   display: flex;
 
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 100px;
+
+  &::before {
+    content: "";
+    background-image: url(${foto});
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 70%;
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
 `;
 
 export const StyledBoxLeft = styled.div`
@@ -41,7 +59,7 @@ export const StyledTextArea = styled.textarea`
 `;
 
 export const StyledTitle = styled.h1`
-  color: ${({ theme }) => theme.thirdColor};
+  color: ${({ theme }) => theme.fiveColor};
   font-size: 20px;
   font-weight: 400;
   text-align: center;

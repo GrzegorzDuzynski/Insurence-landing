@@ -27,7 +27,7 @@ export const StyledBox = styled.div`
 `;
 
 export const StyledTitle = styled.h1`
-  color: ${({ theme }) => theme.firstColor};
+  color: ${({ theme }) => theme.zeroColor};
   font-size: 50px;
   letter-spacing: 3px;
   font-weight: 400;
@@ -37,7 +37,7 @@ export const StyledTitle = styled.h1`
 `;
 
 export const StyledText = styled.p`
-  color: ${({ theme }) => theme.firstColor};
+  color: ${({ theme }) => theme.zeroColor};
 `;
 
 export const StyledButton = styled.button`
@@ -52,7 +52,7 @@ export const StyledButton = styled.button`
   align-self: flex-end;
   &:hover {
     background-color: ${({ theme }) => theme.firstColor};
-    color: ${({ theme }) => theme.fiveColor};
+    color: ${({ theme }) => theme.zeroColor};
     border: 2px solid ${({ theme }) => theme.firstColor};
   }
 `;

@@ -21,7 +21,7 @@ export const StyledButton = styled.button`
   height: 30px;
   width: 30px;
   align-self: flex-end;
-  background-color: rgb(20, 20, 20);
+  background-color: transparent;
   border: 1px solid orange;
   border-radius: 4px;
   padding: 6px;
