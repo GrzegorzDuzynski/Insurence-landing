@@ -8,25 +8,32 @@ import map from "../mapa.png";
 import "./Contact.css";
 import {
   StyledBox,
+  StyledBoxCheckbox,
   StyledBoxImg,
   StyledBoxLeft,
   StyledBoxRight,
   StyledButton,
+  StyledButtonRODO,
+  StyledCheckbox,
   StyledContainer,
   StyledInput,
+  StyledText,
   StyledTextArea,
   StyledTextError,
   StyledTitle,
 } from "./Contact.css";
 import Popup from "./Popup";
+import PopupRODO from "./PopupRODO";
 
 const Contact = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [showPopupRODO, setShowPopupRODO] = useState(false);
   const formik = useFormik({
     initialValues: {
       email: "",
       message: "",
       phone: "",
+      consents: false,
     },
 
     onSubmit: (values, { resetForm }) => {
@@ -36,10 +43,10 @@ const Contact = () => {
         email: "",
         message: "",
         phone: "",
+        consents: false,
       });
-
-      // setValues({ values });
     },
+
     validationSchema: Yup.object({
       email: Yup.string()
         .required("Email jest wymagany")
@@ -54,6 +61,7 @@ const Contact = () => {
           message: "Wpisz prawidłowy numer.",
           excludeEmptyString: false,
         }),
+      consents: Yup.bool().oneOf([true], "Pole jest wymagane"),
     }),
   });
 
@@ -64,6 +72,9 @@ const Contact = () => {
           <p>Dziekuję za zgłoszenie. Postaram sie odpowiedzieć w ciagu 24h.</p>
           <p>Mariusz </p>
         </Popup>
+      )}
+      {showPopupRODO && (
+        <PopupRODO onClick={() => setShowPopupRODO(false)}></PopupRODO>
       )}
       <form onSubmit={formik.handleSubmit}>
         <StyledContainer>
@@ -118,7 +129,29 @@ const Contact = () => {
                   formik.errors.email}
               </StyledTextError>
             </StyledBox>
+            <StyledBox>
+              <StyledBoxCheckbox>
+                <StyledCheckbox
+                  id="consents"
+                  name="consents"
+                  checked={formik.values.consents}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                />
+                <StyledText>
+                  Zaznaczając wyrażasz zgodę na RODO i zgody marketingowe
+                </StyledText>
+              </StyledBoxCheckbox>
+              <StyledTextError>
+                {formik.errors.consents &&
+                  formik.touched.consents &&
+                  formik.errors.consents}
+              </StyledTextError>
+            </StyledBox>
             <StyledButton type="submit">Wyślij wiadomość</StyledButton>
+            <StyledButtonRODO onClick={() => setShowPopupRODO(true)}>
+              Szczegóły RODO i zgód marketingowych
+            </StyledButtonRODO>
           </StyledBoxLeft>
           <StyledBoxRight>
             <StyledBoxImg>

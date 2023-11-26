@@ -18,6 +18,21 @@ export const StyledList = styled.ul`
   display: flex;
   gap: 20px;
 `;
+
+export const StyledBoxCompany = styled.div`
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StyledBoxLogo = styled.div`
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 export const StyledListItem = styled.li`
   color: gray;
   transition: 0.5s ease-in;

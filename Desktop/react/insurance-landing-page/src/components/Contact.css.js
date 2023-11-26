@@ -39,11 +39,7 @@ export const StyledBoxLeft = styled.div`
   gap: 30px;
 `;
 
-export const StyledBoxRight = styled.div`
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-`;
+export const StyledBoxRight = styled.div``;
 
 export const StyledBox = styled.div`
   position: relative;
@@ -63,7 +59,7 @@ export const StyledTitle = styled.h1`
   font-size: 20px;
   font-weight: 400;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 `;
 
 export const StyledBoxImg = styled.div`
@@ -74,15 +70,31 @@ export const StyledBoxImg = styled.div`
 
 export const StyledTextError = styled.p`
   font-size: 12px;
-  color: red;
+  color: rgb(212, 249, 65);
   position: absolute;
   left: 0;
   bottom: -20px;
 `;
+export const StyledBoxCheckbox = styled.div`
+  width: 300px;
+  display: flex;
+  /* flex-direction: column; */
+  gap: 20px;
+`;
 
+export const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
+  height: 18px;
+  width: 18px;
+  background-color: rgb(248, 242, 242);
+  border: 1px solid rgb(214, 208, 208);
+`;
+export const StyledText = styled.p`
+  font-size: 12px;
+  color: white;
+`;
 export const StyledButton = styled.button`
-  width: 160px;
-  background-color: ${({ theme }) => theme.thirdColor};
+  width: 100%;
+  background-color: transparent;
   padding: 8px;
   border: 2px solid ${({ theme }) => theme.thirdColor};
   color: ${({ theme }) => theme.fiveColor};
@@ -90,8 +102,18 @@ export const StyledButton = styled.button`
   border-radius: 3px;
 
   &:hover {
-    background-color: ${({ theme }) => theme.firstColor};
-    color: ${({ theme }) => theme.fiveColor};
-    border: 2px solid ${({ theme }) => theme.firstColor};
+    background-color: ${({ theme }) => theme.thirdColor};
+    /* color: ${({ theme }) => theme.thirdColor}; */
+    /* border: 2px solid ${({ theme }) => theme.firstColor}; */
+  }
+`;
+export const StyledButtonRODO = styled.button`
+  width: 100%;
+  background-color: transparent;
+  /* padding: 8px; */
+  border: 2px solid transparent;
+  color: ${({ theme }) => theme.fiveColor};
+  &:hover {
+    color: ${({ theme }) => theme.thirdColor};
   }
 `;

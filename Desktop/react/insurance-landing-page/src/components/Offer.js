@@ -34,11 +34,8 @@ const Offer = () => {
           </StyledBoxImg>
         </StyledBoxTop>
         <StyledBoxBottom>
-          <StyledTitle>Ubezpieczenia na Życie</StyledTitle>
-          <StyledText>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere,
-            minus.
-          </StyledText>
+          <StyledTitle>Dla Ciebie</StyledTitle>
+          <StyledText>Polisa</StyledText>
           <StyledButton onClick={() => setShowPopup(true)}>
             Więcej informacji
           </StyledButton>

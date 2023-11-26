@@ -1,8 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import logo from "../LOGO2.png";
 
 import {
+  StyledBoxCompany,
+  StyledBoxLogo,
   StyledContainer,
   StyledLinkA,
   StyledList,
@@ -14,9 +17,12 @@ const Navigation = () => {
   return (
     <nav>
       <StyledContainer>
-        <StyledTitle>
-          Żółty Punkt <FontAwesomeIcon icon={faLocationDot} />
-        </StyledTitle>
+        <StyledBoxCompany>
+          <StyledBoxLogo>
+            <img src={logo} alt="Żółty Punkt" />
+          </StyledBoxLogo>
+          <StyledTitle>Żółty Punkt</StyledTitle>
+        </StyledBoxCompany>
         <StyledList>
           <StyledListItem>
             <StyledLinkA href="#Hero">Oferta</StyledLinkA>

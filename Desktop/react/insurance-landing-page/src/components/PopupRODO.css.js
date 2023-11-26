@@ -31,3 +31,16 @@ export const StyledButton = styled.button`
     background-color: orange;
   }
 `;
+
+export const StyledText = styled.p`
+  color: ${({ theme }) => theme.zeroColor};
+  font-size: 12px;
+`;
+
+export const StyledTitle = styled.h1`
+  color: ${({ theme }) => theme.zeroColor};
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 1px;
+`;
