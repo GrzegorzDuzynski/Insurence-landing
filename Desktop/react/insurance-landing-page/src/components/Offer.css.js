@@ -6,6 +6,7 @@ export const StyledContainer = styled.div`
   position: relative;
   padding: 30px;
   position: relative;
+  align-items: center;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
