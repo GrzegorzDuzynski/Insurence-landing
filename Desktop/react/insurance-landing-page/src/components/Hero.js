@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
-import "./Hero.css";
+
 import {
   StyledBox,
   StyledButton,
@@ -10,11 +10,12 @@ import {
   StyledText,
   StyledBoxAngleText,
   StyledBoxAngleIcon,
+  StyledLink,
 } from "./Hero.css";
 
 const Hero = () => {
   return (
-    <StyledHeaderContainer>
+    <StyledHeaderContainer id="hero">
       <StyledBox>
         <StyledHeaderTitle>
           Ubezpieczenie na <span className="span">życie</span> to się opłaca
@@ -22,7 +23,11 @@ const Hero = () => {
         <StyledText>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, veniam.
         </StyledText>
-        <StyledButton>Porozmawiajmy o przyszłości</StyledButton>
+        <StyledButton>
+          <StyledLink smooth to="/#contact">
+            Porozmawiajmy o przyszłości
+          </StyledLink>
+        </StyledButton>
       </StyledBox>
       <StyledBoxAngleText>
         <StyledText>zobacz więcej</StyledText>

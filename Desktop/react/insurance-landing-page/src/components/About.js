@@ -6,13 +6,14 @@ import {
   StyledBox,
   StyledButton,
   StyledImgBox,
+  StyledLink,
   StyledText,
   StyledTitle,
 } from "./About.css";
 
 const About = () => {
   return (
-    <StyledAboutContainer>
+    <StyledAboutContainer id="about">
       <StyledImgBox>
         <img
           src="https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_1280.jpg"
@@ -28,7 +29,11 @@ const About = () => {
           soluta, nemo quia quaerat similique modi ab dolores suscipit labore
           voluptas illo, a numquam. Quia, odit.
         </StyledText>
-        <StyledButton>Proszę o kontakt</StyledButton>
+        <StyledButton>
+          <StyledLink smooth to="/#contact">
+            Proszę o kontakt
+          </StyledLink>
+        </StyledButton>
       </StyledBox>
     </StyledAboutContainer>
   );

@@ -77,7 +77,7 @@ const Contact = () => {
         <PopupRODO onClick={() => setShowPopupRODO(false)}></PopupRODO>
       )}
       <form onSubmit={formik.handleSubmit}>
-        <StyledContainer>
+        <StyledContainer id="contact">
           <StyledBoxLeft>
             <StyledTitle>Chętnie przedstawię ofertę</StyledTitle>
             <StyledBox>

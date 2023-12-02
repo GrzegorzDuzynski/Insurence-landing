@@ -4,13 +4,14 @@ import {
   StyledBoxBlurr,
   StyledButton,
   StyledContainer,
+  StyledLink,
   StyledText,
   StyledTitle,
 } from "./Registration.css";
 
 const Registration = () => {
   return (
-    <StyledContainer>
+    <StyledContainer id="registration">
       <StyledBoxBlurr>
         <StyledBox>
           <StyledTitle>
@@ -20,7 +21,11 @@ const Registration = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis,
             ab.
           </StyledText>
-          <StyledButton>Porozmawiajmy</StyledButton>
+          <StyledButton>
+            <StyledLink smooth to="/#contact">
+              Porozmawiajmy
+            </StyledLink>
+          </StyledButton>
         </StyledBox>
       </StyledBoxBlurr>
     </StyledContainer>

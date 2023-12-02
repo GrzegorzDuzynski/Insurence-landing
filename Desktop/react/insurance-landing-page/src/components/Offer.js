@@ -14,7 +14,7 @@ import Popup from "./Popup";
 const Offer = () => {
   const [showPopup, setShowPopup] = useState(false);
   return (
-    <StyledContainer>
+    <StyledContainer id="offer">
       {showPopup && (
         <Popup onClick={() => setShowPopup(false)}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates

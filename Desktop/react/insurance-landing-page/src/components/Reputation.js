@@ -63,7 +63,7 @@ const Reputation = () => {
     },
   };
   return (
-    <StyledContainer>
+    <StyledContainer id="reputation">
       <StyledBigTitle>Co mówią moi klienci?</StyledBigTitle>
       <Slider {...settings}>
         {opinions.map((opinion, id) => (

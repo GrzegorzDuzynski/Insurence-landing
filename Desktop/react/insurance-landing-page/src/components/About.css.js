@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { HashLink as Link } from "react-router-hash-link";
 
 export const StyledAboutContainer = styled.div`
   height: 100vh;
@@ -54,5 +55,12 @@ export const StyledButton = styled.button`
     background-color: ${({ theme }) => theme.firstColor};
     color: ${({ theme }) => theme.zeroColor};
     border: 2px solid ${({ theme }) => theme.firstColor};
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  color: ${({ theme }) => theme.fiveColor};
+  &:hover {
+    color: ${({ theme }) => theme.zeroColor};
   }
 `;

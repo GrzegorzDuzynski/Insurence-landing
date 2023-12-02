@@ -7,7 +7,7 @@ import {
   StyledBoxCompany,
   StyledBoxLogo,
   StyledContainer,
-  StyledLinkA,
+  StyledLink,
   StyledList,
   StyledListItem,
   StyledTitle,
@@ -25,19 +25,29 @@ const Navigation = () => {
         </StyledBoxCompany>
         <StyledList>
           <StyledListItem>
-            <StyledLinkA href="#Hero">Oferta</StyledLinkA>
+            <StyledLink smooth to="/#offer">
+              Oferta
+            </StyledLink>
           </StyledListItem>
           <StyledListItem>
-            <StyledLinkA href="#About">O mnie</StyledLinkA>
+            <StyledLink smooth to="/#about">
+              O mnie
+            </StyledLink>
           </StyledListItem>
           <StyledListItem>
-            <StyledLinkA href="#Reputation">Reputacja</StyledLinkA>
+            <StyledLink smooth to="/#reputation">
+              Reputacja
+            </StyledLink>
           </StyledListItem>
           <StyledListItem>
-            <StyledLinkA href="#Stats">Statystyki</StyledLinkA>
+            <StyledLink smooth to="/#stats">
+              Statystyki
+            </StyledLink>
           </StyledListItem>
           <StyledListItem>
-            <StyledLinkA href="#Contact">Kontakt</StyledLinkA>
+            <StyledLink smooth to="/#contact">
+              Kontakt
+            </StyledLink>
           </StyledListItem>
         </StyledList>
       </StyledContainer>

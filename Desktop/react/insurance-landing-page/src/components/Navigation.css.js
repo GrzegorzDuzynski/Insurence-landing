@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { HashLink as Link } from "react-router-hash-link";
 
 export const StyledContainer = styled.div`
   padding: 10px 50px;
@@ -55,7 +56,7 @@ export const StyledListItem = styled.li`
   }
 `;
 
-export const StyledLinkA = styled.a`
+export const StyledLink = styled(Link)`
   color: ${({ theme }) => theme.fiveColor};
 `;
 

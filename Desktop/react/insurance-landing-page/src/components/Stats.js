@@ -10,7 +10,7 @@ import {
 
 const Stats = () => {
   return (
-    <StyledContainer>
+    <StyledContainer id="stats">
       <StyledBox>
         <StyledTitle>10</StyledTitle>
         <StyledText>Lat na rynku</StyledText>
