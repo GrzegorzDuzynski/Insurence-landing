@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../breakpoints";
 
 export const StyledContainer = styled.div`
   width: 100%;
@@ -11,6 +12,12 @@ export const StyledBoxOutside = styled.div`
   transition: 0.3s ease-in;
   & :hover {
     scale: 1.1;
+  }
+  @media ${device.tablet} {
+    padding: 15px;
+    & :hover {
+      scale: 1.05;
+    }
   }
 `;
 
@@ -26,6 +33,9 @@ export const StyledBigTitle = styled.h1`
   font-weight: 400;
   text-align: center;
   letter-spacing: 3px;
+  @media ${device.tablet} {
+    font-size: 24px;
+  }
 `;
 
 export const StyledTitle = styled.h1`
@@ -34,9 +44,15 @@ export const StyledTitle = styled.h1`
   font-weight: 400;
   text-align: right;
   pointer-events: none;
+  @media ${device.tablet} {
+    font-size: 16px;
+  }
 `;
 
 export const StyledText = styled.p`
   color: ${({ theme }) => theme.thirdColor};
   pointer-events: none;
+  @media ${device.tablet} {
+    font-size: 10px;
+  }
 `;

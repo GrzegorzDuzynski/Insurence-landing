@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { HashLink as Link } from "react-router-hash-link";
+import { device } from "../breakpoints";
 
 export const StyledHeaderContainer = styled.div`
   height: 100vh;
@@ -37,6 +38,9 @@ export const StyledBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  @media ${device.tablet} {
+    width: 300px;
+  }
 `;
 
 export const StyledBoxAngleIcon = styled.div`
@@ -63,10 +67,16 @@ export const StyledHeaderTitle = styled.h1`
   .span {
     color: ${({ theme }) => theme.thirdColor};
   }
+  @media ${device.tablet} {
+    font-size: 30px;
+  }
 `;
 
 export const StyledText = styled.p`
   color: ${({ theme }) => theme.firstColor};
+  @media ${device.tablet} {
+    font-size: 12px;
+  }
 `;
 
 export const StyledButton = styled.button`
@@ -76,7 +86,6 @@ export const StyledButton = styled.button`
 
   padding: 8px;
   border: 2px solid ${({ theme }) => theme.firstColor};
-
   font-weight: 600;
   border-radius: 3px;
   position: absolute;
@@ -88,6 +97,11 @@ export const StyledButton = styled.button`
     scale: 1.15;
     /* background-color: ${({ theme }) => theme.firstColor};
     color: ${({ theme }) => theme.fiveColor}; */
+  }
+  @media ${device.tablet} {
+    font-size: 12px;
+    padding: 6px;
+    border: 1px solid ${({ theme }) => theme.firstColor};
   }
 `;
 

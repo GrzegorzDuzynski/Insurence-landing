@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../breakpoints";
 
 export const StyledContainer = styled.div`
   width: 100%;
@@ -9,9 +10,9 @@ export const StyledContainer = styled.div`
 export const StyledBoxOutside = styled.div`
   padding: 30px;
   transition: 0.3s ease-in;
-  /* & :hover {
-    scale: 1.1;
-  } */
+  @media ${device.tablet} {
+    padding: 15px;
+  }
 `;
 
 export const StyledBox = styled.div`
@@ -43,4 +44,8 @@ export const StyledBoxImg = styled.div`
   height: 100px;
   width: 100px;
   pointer-events: none;
+  @media ${device.tablet} {
+    height: 80px;
+    width: 80px;
+  }
 `;

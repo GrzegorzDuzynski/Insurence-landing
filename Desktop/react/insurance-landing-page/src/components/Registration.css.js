@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { HashLink as Link } from "react-router-hash-link";
+import { device } from "../breakpoints";
 
 export const StyledContainer = styled.div`
   height: 100vh;
   position: relative;
-  /* padding: 30px; */
   position: relative;
 
   display: flex;
@@ -44,6 +44,10 @@ export const StyledBox = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 30px;
+  @media ${device.tablet} {
+    width: 300px;
+    gap: 10px;
+  }
 `;
 
 export const StyledTitle = styled.h1`
@@ -53,11 +57,17 @@ export const StyledTitle = styled.h1`
   .span {
     color: ${({ theme }) => theme.thirdColor};
   }
+  @media ${device.tablet} {
+    font-size: 24px;
+  }
 `;
 
 export const StyledText = styled.p`
   font-size: 12px;
   color: ${({ theme }) => theme.fiveColor};
+  @media ${device.tablet} {
+    font-size: 10px;
+  }
 `;
 
 export const StyledButton = styled.button`
@@ -70,12 +80,14 @@ export const StyledButton = styled.button`
 
   font-weight: 600;
   border-radius: 3px;
-  /* position: absolute;
-  left: 0;
-  bottom: -40px; */
   transition: 0.5s ease-in;
   &:hover {
     scale: 1.15;
+  }
+  @media ${device.tablet} {
+    padding: 6px;
+    border: 1px solid ${({ theme }) => theme.firstColor};
+    font-weight: 400;
   }
 `;
 

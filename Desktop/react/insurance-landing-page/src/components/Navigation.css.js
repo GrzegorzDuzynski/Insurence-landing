@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { HashLink as Link } from "react-router-hash-link";
+import { device } from "../breakpoints";
 
 export const StyledContainer = styled.div`
   padding: 10px 50px;
@@ -13,11 +14,23 @@ export const StyledContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media ${device.tablet} {
+    padding: 10px 20px;
+  }
 `;
 
 export const StyledList = styled.ul`
   display: flex;
   gap: 20px;
+  @media ${device.tablet} {
+    padding: 10px;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    bottom: -130px;
+    right: 0;
+    z-index: 10;
+  }
 `;
 
 export const StyledBoxCompany = styled.div`
@@ -62,5 +75,8 @@ export const StyledLink = styled(Link)`
 
 export const StyledTitle = styled.h1`
   color: ${({ theme }) => theme.firstColor};
+  @media ${device.tablet} {
+    font-size: 24px;
+  }
 `;
 export const StyledText = styled.p``;

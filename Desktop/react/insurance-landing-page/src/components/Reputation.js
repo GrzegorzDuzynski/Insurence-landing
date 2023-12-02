@@ -43,15 +43,17 @@ const Reputation = () => {
 
   // console.log(getOpinions);
 
-  const settings = {
+  let settings = {
     dots: true,
-    infinite: true,
     centerPadding: "60px",
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     rows: 1,
-    slidesPerRow: 3,
+    slidesPerRow: 4,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
     adaptiveHeight: true,
     swipeToSlide: true,
     nextArrow: <SampleNextArrow />,
@@ -61,6 +63,32 @@ const Reputation = () => {
         `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
       );
     },
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          slidesPerRow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          slidesPerRow: 2,
+        },
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          slidesPerRow: 1,
+        },
+      },
+    ],
   };
   return (
     <StyledContainer id="reputation">

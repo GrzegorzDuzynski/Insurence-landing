@@ -1,15 +1,20 @@
 import styled from "styled-components";
+import { device } from "../breakpoints";
 
 export const StyledContainer = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   padding: 30px;
   position: relative;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  grid-auto-rows: auto;
+  @media ${device.tablet} {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+  }
 `;
 
 export const StyledCard = styled.div`
@@ -20,13 +25,24 @@ export const StyledCard = styled.div`
   background-color: ${({ theme }) => theme.secondColor};
   padding: 15px;
   transition: 0.5s ease-in;
+  justify-self: center;
 
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 
   &:hover {
     scale: 1.1;
+  }
+
+  @media ${device.tablet} {
+    width: 200px;
+    height: 300px;
+    padding: 10px;
+    gap: 10px;
+    &:hover {
+      scale: 1.05;
+    }
   }
 `;
 
@@ -34,15 +50,25 @@ export const StyledBoxTop = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  @media ${device.tablet} {
+    gap: 10px;
+  }
 `;
 export const StyledBoxImg = styled.div`
-  height: 250px;
+  height: 300px;
   width: 270px;
+  @media ${device.tablet} {
+    width: 180px;
+    height: 180px;
+  }
 `;
 export const StyledBoxBottom = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  @media ${device.tablet} {
+    gap: 6px;
+  }
 `;
 
 export const StyledTitle = styled.h1`
@@ -51,11 +77,17 @@ export const StyledTitle = styled.h1`
   font-weight: 400;
   letter-spacing: 2px;
   text-align: center;
+  @media ${device.tablet} {
+    font-size: 14px;
+  }
 `;
 
 export const StyledText = styled.p`
   font-size: 12px;
   color: ${({ theme }) => theme.zeroColor};
+  @media ${device.tablet} {
+    font-size: 8px;
+  }
 `;
 
 export const StyledButton = styled.button`
@@ -70,5 +102,9 @@ export const StyledButton = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.thirdColor};
     color: ${({ theme }) => theme.fiveColor};
+  }
+  @media ${device.tablet} {
+    font-size: 10px;
+    padding: 6px;
   }
 `;

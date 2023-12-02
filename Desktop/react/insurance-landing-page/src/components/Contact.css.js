@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import foto from "../zolty_punkt_ubezpieczen.JPG";
+import { device } from "../breakpoints";
 
 export const StyledContainer = styled.div`
   height: 100vh;
@@ -8,7 +9,6 @@ export const StyledContainer = styled.div`
   position: relative;
 
   display: flex;
-
   justify-content: center;
   align-items: center;
   gap: 100px;
@@ -29,6 +29,11 @@ export const StyledContainer = styled.div`
     right: 0;
     z-index: -1;
   }
+  @media ${device.tablet} {
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 export const StyledBoxLeft = styled.div`
@@ -37,6 +42,9 @@ export const StyledBoxLeft = styled.div`
   justify-content: center;
   align-items: center;
   gap: 30px;
+  @media ${device.tablet} {
+    gap: 15px;
+  }
 `;
 
 export const StyledBoxRight = styled.div``;
@@ -47,11 +55,19 @@ export const StyledBox = styled.div`
 export const StyledInput = styled.input`
   width: 300px;
   padding: 4px;
+  @media ${device.tablet} {
+    padding: 2px;
+    width: 260px;
+  }
 `;
 
 export const StyledTextArea = styled.textarea`
   height: 80px;
   width: 300px;
+  padding: 2px;
+  @media ${device.tablet} {
+    width: 260px;
+  }
 `;
 
 export const StyledTitle = styled.h1`
@@ -60,12 +76,19 @@ export const StyledTitle = styled.h1`
   font-weight: 400;
   text-align: center;
   letter-spacing: 1px;
+  @media ${device.tablet} {
+    font-size: 14px;
+  }
 `;
 
 export const StyledBoxImg = styled.div`
   width: 300px;
   height: 300px;
   border: 1px solid gray;
+  @media ${device.tablet} {
+    width: 260px;
+    height: 260px;
+  }
 `;
 
 export const StyledTextError = styled.p`
@@ -74,12 +97,20 @@ export const StyledTextError = styled.p`
   position: absolute;
   left: 0;
   bottom: -20px;
+  @media ${device.tablet} {
+    bottom: -10px;
+    font-size: 8px;
+  }
 `;
 export const StyledBoxCheckbox = styled.div`
   width: 300px;
   display: flex;
   /* flex-direction: column; */
   gap: 20px;
+  @media ${device.tablet} {
+    width: 260px;
+    gap: 10px;
+  }
 `;
 
 export const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
@@ -91,6 +122,9 @@ export const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
 export const StyledText = styled.p`
   font-size: 12px;
   color: white;
+  @media ${device.tablet} {
+    font-size: 10px;
+  }
 `;
 export const StyledButton = styled.button`
   width: 100%;
@@ -105,6 +139,12 @@ export const StyledButton = styled.button`
     background-color: ${({ theme }) => theme.thirdColor};
     /* color: ${({ theme }) => theme.thirdColor}; */
     /* border: 2px solid ${({ theme }) => theme.firstColor}; */
+  }
+  @media ${device.tablet} {
+    font-size: 10px;
+    padding: 6px;
+    border: 1px solid ${({ theme }) => theme.thirdColor};
+    font-size: 400;
   }
 `;
 export const StyledButtonRODO = styled.button`
