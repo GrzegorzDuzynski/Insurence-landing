@@ -51,11 +51,11 @@ const Cooperations = () => {
     autoplaySpeed: 3000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    afterChange: function (index) {
-      console.log(
-        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-      );
-    },
+    // afterChange: function (index) {
+    //   console.log(
+    //     `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
+    //   );
+    // },
     responsive: [
       {
         breakpoint: 1024,

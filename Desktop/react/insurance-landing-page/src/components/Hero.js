@@ -29,14 +29,16 @@ const Hero = () => {
           </StyledLink>
         </StyledButton>
       </StyledBox>
-      <StyledBoxAngleText>
-        <StyledText>zobacz więcej</StyledText>
-      </StyledBoxAngleText>
-      <StyledBoxAngleIcon>
-        <StyledText>
-          <FontAwesomeIcon icon={faAnglesDown} />
-        </StyledText>
-      </StyledBoxAngleIcon>
+      <StyledLink smooth to="/#offer">
+        <StyledBoxAngleText>
+          <StyledText>zobacz więcej</StyledText>
+        </StyledBoxAngleText>
+        <StyledBoxAngleIcon>
+          <StyledText>
+            <FontAwesomeIcon icon={faAnglesDown} />
+          </StyledText>
+        </StyledBoxAngleIcon>
+      </StyledLink>
     </StyledHeaderContainer>
   );
 };
