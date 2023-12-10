@@ -20,14 +20,6 @@ const Footer = () => {
         <FontAwesomeIcon
           onClick={() => {
             window.location.href =
-              "https://www.linkedin.com/in/grzegorz-du%C5%BCy%C5%84ski-52584197/";
-          }}
-          className="icon"
-          icon={faLinkedin}
-        />
-        <FontAwesomeIcon
-          onClick={() => {
-            window.location.href =
               "https://www.facebook.com/zoltypunkt/?locale=pl_PL";
           }}
           className="icon"

@@ -176,7 +176,7 @@ const Contact = () => {
               <StyledBoxContact>
                 <FontAwesomeIcon className="icon" icon={faLocationDot} />
                 <StyledTitle>
-                  Kielce Astronautów 1A obok stacji{" "}
+                  Kielce Astronautów&nbsp;1A obok stacji{" "}
                   <span className="span">Statoil/CircleK</span>
                 </StyledTitle>
               </StyledBoxContact>
