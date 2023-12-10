@@ -1,4 +1,5 @@
 import React from "react";
+import doGpryNogami from "../doGoryNogami.png";
 
 import "./About.css";
 import {
@@ -19,6 +20,7 @@ const About = () => {
           src="https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_1280.jpg"
           alt="Mariusz Sępowicz"
         />
+        {/* <img src={doGpryNogami} alt="Żółty Punkt" /> */}
       </StyledImgBox>
       <StyledBox>
         <StyledTitle>

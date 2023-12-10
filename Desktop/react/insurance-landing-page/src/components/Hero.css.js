@@ -80,31 +80,67 @@ export const StyledText = styled.p`
 `;
 
 export const StyledButton = styled.button`
-  width: 230px;
+  width: 80%;
   background-color: transparent;
   color: ${({ theme }) => theme.firstColor};
 
-  padding: 8px;
+  padding: 4px;
   border: 2px solid ${({ theme }) => theme.firstColor};
   font-weight: 600;
   border-radius: 3px;
+  overflow: hidden;
   position: absolute;
   left: 0;
-  bottom: -40px;
+  bottom: -50px;
   transition: 0.5s ease-in;
   /* align-self: flex-end; */
   &:hover {
     scale: 1.15;
-    /* background-color: ${({ theme }) => theme.firstColor};
-    color: ${({ theme }) => theme.fiveColor}; */
   }
   @media ${device.tablet} {
     font-size: 12px;
-    padding: 6px;
+    /* padding: 8px; */
     border: 1px solid ${({ theme }) => theme.firstColor};
   }
 `;
 
 export const StyledLink = styled(Link)`
   color: ${({ theme }) => theme.firstColor};
+  .box-button-hero {
+    transition: all 500ms ease-in-out;
+  }
+  .title-button-hero {
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: 400;
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+  .old-text,
+  .new-text {
+    display: block;
+    overflow: hidden;
+    transition: all 500ms ease-in-out;
+  }
+  .old-text {
+    height: auto;
+    opacity: 1;
+    width: auto;
+  }
+  .new-text {
+    height: 0;
+    opacity: 0;
+    width: 0;
+  }
+  .box-button-hero:hover .old-text {
+    height: 0px;
+    opacity: 0;
+    width: 0px;
+  }
+  .box-button-hero:hover .new-text {
+    height: auto;
+    opacity: 1;
+    width: auto;
+  }
 `;

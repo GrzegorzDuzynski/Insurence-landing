@@ -123,6 +123,26 @@ const Offer = () => {
           </StyledButton>
         </StyledBoxBottom>
       </StyledCard>
+      <StyledCard>
+        <StyledBoxTop>
+          <StyledBoxImg>
+            <img
+              src="https://img.freepik.com/free-photo/woman-holding-girl-medium-shot_23-2148973678.jpg?w=740&t=st=1700817287~exp=1700817887~hmac=3640b6265f8cc223309cfc6e5e4710787c44489097da74bb0a01de9fa29df55e"
+              alt="child with women"
+            />
+          </StyledBoxImg>
+        </StyledBoxTop>
+        <StyledBoxBottom>
+          <StyledTitle>Inne Ubezpieczenia</StyledTitle>
+          <StyledText>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere,
+            minus.
+          </StyledText>
+          <StyledButton onClick={() => setShowPopup(true)}>
+            Więcej informacji
+          </StyledButton>
+        </StyledBoxBottom>
+      </StyledCard>
     </StyledContainer>
   );
 };

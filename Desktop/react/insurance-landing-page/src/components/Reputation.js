@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -37,43 +37,26 @@ function SamplePrevArrow(props) {
 }
 
 const Reputation = () => {
-  // const header = new Headers({ "Access-Control-Allow-Origin": "*" });
-  // const getOpinions = fetch(
-  //   "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E",
-  //     headers:{
-  //     'Access-Control-Allow-Origin': '*', // Ten nagłówek może być ignorowany przez niektóre usługi
-  //   },
+  const [opinionsObj, setOpinionsObj] = useState();
 
-  // )
-  //   .then((response) => response.json())
-  //   .then((json) => console.log(json))
-  //   .catch((error) => console.log("Authorization failed: " + error.message));
+  useEffect(() => {
+    let config = {
+      method: "get",
+      url: "/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E", //the rest of your url
+      secure: false,
+    };
+    const fetchData = async () => {
+      const result = await axios(config).then(function (response) {
+        setOpinionsObj(response.data.result.reviews);
+        // console.log(response.data.result.reviews);
+        // setOpinionsObj(response.data);
+      });
+    };
 
-  const fetchData = async () => {
-    const apiKey = "AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E";
-    const placeId = "ChIJexDWKjAnGEcRl4EbYC5gvRI";
+    fetchData();
+  }, []);
 
-    try {
-      const response = await axios.get(
-        `https://maps.googleapis.com/maps/api/place/details/json`,
-        {
-          params: {
-            place_id: placeId,
-            key: apiKey,
-          },
-          headers: {
-            "Access-Control-Allow-Origin": "*", // Ten nagłówek może być ignorowany przez niektóre usługi
-          },
-        }
-      );
-
-      console.log(response.data);
-    } catch (error) {
-      console.error("Błąd pobierania danych:", error);
-    }
-  };
-
-  fetchData();
+  console.log(opinionsObj);
 
   let settings = {
     dots: true,
@@ -130,7 +113,7 @@ const Reputation = () => {
           <StyledBoxOutside key={id}>
             <StyledBox>
               <StyledText>{opinion.text}</StyledText>
-              <StyledTitle>{opinion.title}</StyledTitle>
+              <StyledTitle>{opinion.author_name}</StyledTitle>
             </StyledBox>
           </StyledBoxOutside>
         ))}

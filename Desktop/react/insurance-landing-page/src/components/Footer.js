@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <StyledContainer>
       <StyledBox>
-        <a href="tel:+48123321123">
+        <a href="tel:+48791577679">
           <FontAwesomeIcon className="icon" icon={faPhone} />
         </a>
         <FontAwesomeIcon

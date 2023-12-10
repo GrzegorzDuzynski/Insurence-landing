@@ -95,14 +95,14 @@ export const StyledButton = styled.button`
   background-color: transparent;
   color: ${({ theme }) => theme.zeroColor};
   padding: 8px;
-  border: 2px solid ${({ theme }) => theme.thirdColor};
+  border: 2px solid ${({ theme }) => theme.fourColor};
   font-weight: 600;
   border-radius: 3px;
   transition: 0.5s ease-in;
 
   &:hover {
-    background-color: ${({ theme }) => theme.thirdColor};
-    color: ${({ theme }) => theme.fiveColor};
+    background-color: ${({ theme }) => theme.fourColor};
+    /* color: ${({ theme }) => theme.fiveColor}; */
   }
   @media ${device.tablet} {
     font-size: 10px;

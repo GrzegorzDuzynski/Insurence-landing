@@ -25,7 +25,12 @@ const Hero = () => {
         </StyledText>
         <StyledButton>
           <StyledLink smooth to="/#contact">
-            Porozmawiajmy o przyszłości
+            <div class="box-button-hero">
+              <h1 class="title-button-hero">
+                <span class="old-text">Porozmawiajmy o przyszłości</span>
+                <span class="new-text">To dobry wybór</span>
+              </h1>
+            </div>
           </StyledLink>
         </StyledButton>
       </StyledBox>

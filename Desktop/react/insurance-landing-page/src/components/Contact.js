@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import map from "../mapa.png";
@@ -11,6 +13,7 @@ import {
   StyledBoxCheckbox,
   StyledBoxImg,
   StyledBoxLeft,
+  StyledBoxMiddle,
   StyledBoxRight,
   StyledButton,
   StyledButtonRODO,
@@ -21,6 +24,8 @@ import {
   StyledTextArea,
   StyledTextError,
   StyledTitle,
+  StyledBoxBlurr,
+  StyledBoxContact,
 } from "./Contact.css";
 import Popup from "./Popup";
 import PopupRODO from "./PopupRODO";
@@ -153,7 +158,7 @@ const Contact = () => {
               Szczegóły RODO i zgód marketingowych
             </StyledButtonRODO>
           </StyledBoxLeft>
-          <StyledBoxRight>
+          <StyledBoxMiddle>
             <StyledBoxImg>
               <iframe
                 src="//maps.google.com/maps?output=embed&amp;q=Astronautów 1A, Kielce&amp;t=m&amp;hl=English"
@@ -165,7 +170,25 @@ const Contact = () => {
                 // referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </StyledBoxImg>
-          </StyledBoxRight>
+          </StyledBoxMiddle>
+          <StyledBoxBlurr>
+            <StyledBoxRight>
+              <StyledBoxContact>
+                <FontAwesomeIcon className="icon" icon={faLocationDot} />
+                <StyledTitle>
+                  Kielce Astronautów 1A obok stacji{" "}
+                  <span className="span">Statoil/CircleK</span>
+                </StyledTitle>
+              </StyledBoxContact>
+
+              <a href="tel:+48791577679">
+                <StyledBoxContact>
+                  <FontAwesomeIcon className="icon" icon={faPhone} />
+                  <StyledTitle>Mariusz: 791&nbsp;577&nbsp;679</StyledTitle>
+                </StyledBoxContact>
+              </a>
+            </StyledBoxRight>
+          </StyledBoxBlurr>
         </StyledContainer>
       </form>
     </>

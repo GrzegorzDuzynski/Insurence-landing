@@ -1,26 +1,130 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./Stats.css";
 import {
   StyledBox,
+  StyledBoxPlus,
   StyledContainer,
   StyledText,
   StyledTitle,
 } from "./Stats.css";
 
 const Stats = () => {
+  const [yearsStart, setYearsStart] = useState(new Date("2015/12/01"));
+  const [years, setYears] = useState(0);
+  const [displayYears, setDisplayYears] = useState(0);
+  const [scroll, setScroll] = useState(false);
+  const [constarcts, setConstarcts] = useState(0);
+  const [displayConstarcts, setDisplayConstarcts] = useState(0);
+  const [clients, setClients] = useState(0);
+  const [displayClients, setDisplayClients] = useState(0);
+
+  let today = new Date();
+
+  useEffect(() => {
+    const yearsOnMarket = () => {
+      setYears(
+        (
+          Math.round((today - yearsStart) / (1000 * 60 * 60 * 24)) / 365
+        ).toFixed(0)
+      );
+    };
+
+    yearsOnMarket();
+
+    const contractsOnMarket = () => {
+      setConstarcts(
+        Math.round(((today - yearsStart) / (1000 * 60 * 60 * 24)) * 4).toFixed(
+          0
+        )
+      );
+    };
+
+    contractsOnMarket();
+
+    const clientsOnMarket = () => {
+      setClients(
+        Math.round((today - yearsStart) / (1000 * 60 * 60 * 24) / 3).toFixed(0)
+      );
+    };
+
+    clientsOnMarket();
+
+    console.log(constarcts);
+
+    const countToYear = (liczba) => {
+      let count = 0;
+      let interval = setInterval(function () {
+        if (count <= liczba) {
+          setDisplayYears(count);
+          count++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 100);
+    };
+
+    const countToContracts = (liczba) => {
+      let count = 0;
+      let interval = setInterval(function () {
+        if (count <= liczba) {
+          setDisplayConstarcts(count);
+          count += 50;
+        } else {
+          clearInterval(interval);
+        }
+      }, 1);
+    };
+
+    const countToClients = (liczba) => {
+      let count = 0;
+      let interval = setInterval(function () {
+        if (count <= liczba) {
+          setDisplayClients(count);
+          count += 15;
+        } else {
+          clearInterval(interval);
+        }
+      }, 1);
+    };
+
+    countToYear(years);
+    countToContracts(constarcts);
+    countToClients(clients);
+  }, [scroll]);
+
+  const sprawdzPrzewijanie = () => {
+    let counterElement = document.getElementById("stats");
+    let position = counterElement.getBoundingClientRect().top;
+
+    if (position < window.innerHeight) {
+      setScroll(true);
+    }
+  };
+
+  window.addEventListener("scroll", sprawdzPrzewijanie);
+
   return (
     <StyledContainer id="stats">
       <StyledBox>
-        <StyledTitle>10</StyledTitle>
+        <StyledBoxPlus>
+          <StyledTitle>{displayYears}</StyledTitle>
+          <StyledTitle>+</StyledTitle>
+        </StyledBoxPlus>
         <StyledText>Lat na rynku</StyledText>
       </StyledBox>
       <StyledBox>
-        <StyledTitle>34500+</StyledTitle>
+        <StyledBoxPlus>
+          <StyledTitle>{displayConstarcts}</StyledTitle>
+          <StyledTitle>+</StyledTitle>
+        </StyledBoxPlus>
         <StyledText>Zawartych polis</StyledText>
       </StyledBox>
       <StyledBox>
-        <StyledTitle>345+</StyledTitle>
+        <StyledBoxPlus>
+          <StyledTitle>{displayClients}</StyledTitle>
+          <StyledTitle>+</StyledTitle>
+        </StyledBoxPlus>
         <StyledText>Zadowolonych klientów</StyledText>
       </StyledBox>
     </StyledContainer>

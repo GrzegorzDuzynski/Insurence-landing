@@ -22,6 +22,7 @@ export const StyledContainer = styled.div`
     background-size: cover;
     opacity: 70%;
     position: absolute;
+    filter: blur(1px);
 
     top: 0;
     bottom: 0;
@@ -29,10 +30,12 @@ export const StyledContainer = styled.div`
     right: 0;
     z-index: -1;
   }
+  @media ${device.laptop} {
+    gap: 20px;
+  }
   @media ${device.tablet} {
     height: auto;
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -47,10 +50,39 @@ export const StyledBoxLeft = styled.div`
   }
 `;
 
-export const StyledBoxRight = styled.div``;
+export const StyledBoxMiddle = styled.div``;
 
+export const StyledBoxRight = styled.div`
+  width: 100%;
+  height: 300px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @media ${device.tablet} {
+    height: 150px;
+  }
+  /* justify-content: space-around; */
+`;
+export const StyledBoxBlurr = styled.div`
+  width: 350px;
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media ${device.tablet} {
+    width: 260px;
+  }
+`;
 export const StyledBox = styled.div`
   position: relative;
+`;
+
+export const StyledBoxContact = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 `;
 export const StyledInput = styled.input`
   width: 300px;
@@ -65,6 +97,7 @@ export const StyledTextArea = styled.textarea`
   height: 80px;
   width: 300px;
   padding: 2px;
+
   @media ${device.tablet} {
     width: 260px;
   }
@@ -73,9 +106,12 @@ export const StyledTextArea = styled.textarea`
 export const StyledTitle = styled.h1`
   color: ${({ theme }) => theme.fiveColor};
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 800;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
+  .span {
+    color: ${({ theme }) => theme.firstColor};
+  }
   @media ${device.tablet} {
     font-size: 14px;
   }
@@ -130,20 +166,19 @@ export const StyledButton = styled.button`
   width: 100%;
   background-color: transparent;
   padding: 8px;
-  border: 2px solid ${({ theme }) => theme.thirdColor};
+  border: 2px solid ${({ theme }) => theme.firstColor};
   color: ${({ theme }) => theme.fiveColor};
   font-weight: 600;
   border-radius: 3px;
 
   &:hover {
-    background-color: ${({ theme }) => theme.thirdColor};
-    /* color: ${({ theme }) => theme.thirdColor}; */
-    /* border: 2px solid ${({ theme }) => theme.firstColor}; */
+    background-color: ${({ theme }) => theme.firstColor};
+    color: ${({ theme }) => theme.zeroColor};
   }
   @media ${device.tablet} {
     font-size: 10px;
     padding: 6px;
-    border: 1px solid ${({ theme }) => theme.thirdColor};
+    border: 1px solid ${({ theme }) => theme.firstColor};
     font-size: 400;
   }
 `;
@@ -154,6 +189,6 @@ export const StyledButtonRODO = styled.button`
   border: 2px solid transparent;
   color: ${({ theme }) => theme.fiveColor};
   &:hover {
-    color: ${({ theme }) => theme.thirdColor};
+    color: ${({ theme }) => theme.firstColor};
   }
 `;
