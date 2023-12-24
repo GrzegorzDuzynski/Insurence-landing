@@ -3,9 +3,8 @@ import { device } from "../breakpoints";
 
 export const StyledContainer = styled.div`
   min-height: 100vh;
-  position: relative;
+  /* position: relative; */
   padding: 30px;
-  position: relative;
   align-items: center;
 
   display: grid;
@@ -27,23 +26,24 @@ export const StyledCard = styled.div`
   padding: 15px;
   transition: 0.5s ease-in;
   justify-self: center;
+  /* z-index: 1; */
 
   display: flex;
   flex-direction: column;
   gap: 20px;
 
-  &:hover {
+  /* &:hover {
     scale: 1.1;
-  }
+  } */
 
   @media ${device.tablet} {
     width: 200px;
     height: 300px;
     padding: 10px;
     gap: 10px;
-    &:hover {
+    /* &:hover {
       scale: 1.05;
-    }
+    } */
   }
 `;
 
@@ -63,6 +63,8 @@ export const StyledBoxImg = styled.div`
     height: 180px;
   }
 `;
+
+export const StyledBoxText = styled.div``;
 export const StyledBoxBottom = styled.div`
   display: flex;
   flex-direction: column;
@@ -84,10 +86,10 @@ export const StyledTitle = styled.h1`
 `;
 
 export const StyledText = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   color: ${({ theme }) => theme.zeroColor};
   @media ${device.tablet} {
-    font-size: 8px;
+    font-size: 9px;
   }
 `;
 

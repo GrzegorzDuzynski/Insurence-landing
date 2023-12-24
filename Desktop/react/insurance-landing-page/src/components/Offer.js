@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   StyledBoxBottom,
   StyledBoxImg,
+  StyledBoxText,
   StyledBoxTop,
   StyledButton,
   StyledCard,
@@ -10,12 +11,15 @@ import {
   StyledTitle,
 } from "./Offer.css";
 import Popup from "./Popup";
+import { insuranceDescription } from ".././data";
+import parse from "html-react-parser";
 
 const Offer = () => {
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState([]);
+  console.log(showPopup);
   return (
     <StyledContainer id="offer">
-      {showPopup && (
+      {/* {showPopup && (
         <Popup onClick={() => setShowPopup(false)}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
           enim dolorum in cum aliquid et at adipisci, quam earum ullam explicabo
@@ -23,27 +27,60 @@ const Offer = () => {
           quibusdam nesciunt debitis, obcaecati animi porro? Repudiandae sequi
           aliquid iste omnis?
         </Popup>
-      )}
-      <StyledCard>
-        <StyledBoxTop>
-          <StyledBoxImg>
-            <img
-              src="https://img.freepik.com/free-photo/happy-beautiful-family-big-garden-dawn-time_1328-1069.jpg?w=1060&t=st=1700405293~exp=1700405893~hmac=c8e03649f22108cd5744dc8c984562d08072d07f2683bd056a66c28a69fc05ab"
-              alt="family"
-            />
-          </StyledBoxImg>
-        </StyledBoxTop>
-        <StyledBoxBottom>
-          <StyledTitle>Ubezpieczenie na życie</StyledTitle>
-          <StyledText>
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </StyledText>
-          <StyledButton onClick={() => setShowPopup(true)}>
-            Więcej informacji
-          </StyledButton>
-        </StyledBoxBottom>
-      </StyledCard>
-      <StyledCard>
+      )} */}
+      {insuranceDescription.map((card, id) => (
+        <StyledCard key={id}>
+          {showPopup[id] && (
+            <Popup
+              onClick={() =>
+                setShowPopup((prevState) => [
+                  ...prevState.slice(0, id),
+                  false,
+                  ...prevState.slice(id + 1),
+                ])
+              }
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "left",
+                }}
+              >
+                <StyledBoxImg>
+                  <img src={card.img} alt={card.title} />
+                </StyledBoxImg>
+                <StyledTitle>{card.title}</StyledTitle>
+              </div>
+              {parse(card.longText)}
+            </Popup>
+          )}
+          <StyledBoxTop>
+            <StyledBoxImg>
+              <img src={card.img} alt={card.title} />
+            </StyledBoxImg>
+          </StyledBoxTop>
+          <StyledBoxBottom>
+            <StyledTitle>{card.title}</StyledTitle>
+            <StyledBoxText>
+              <StyledText>{card.shortText}</StyledText>
+            </StyledBoxText>
+            <StyledButton
+              onClick={() =>
+                setShowPopup((prevState) => [
+                  ...prevState.slice(0, id),
+                  true,
+                  ...prevState.slice(id + 1),
+                ])
+              }
+            >
+              Więcej informacji
+            </StyledButton>
+          </StyledBoxBottom>
+        </StyledCard>
+      ))}
+
+      {/* <StyledCard>
         <StyledBoxTop>
           <StyledBoxImg>
             <img
@@ -55,8 +92,7 @@ const Offer = () => {
         <StyledBoxBottom>
           <StyledTitle>Ubezpieczenie OC/AC</StyledTitle>
           <StyledText>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere,
-            minus.
+            OC komunikacyjne - jest w Polsce ubezpieczeniem obowiązkowym.
           </StyledText>
           <StyledButton onClick={() => setShowPopup(true)}>
             Więcej informacji
@@ -142,7 +178,7 @@ const Offer = () => {
             Więcej informacji
           </StyledButton>
         </StyledBoxBottom>
-      </StyledCard>
+      </StyledCard> */}
     </StyledContainer>
   );
 };

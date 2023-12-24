@@ -30,8 +30,6 @@ const Stats = () => {
       );
     };
 
-    yearsOnMarket();
-
     const contractsOnMarket = () => {
       setConstarcts(
         Math.round(((today - yearsStart) / (1000 * 60 * 60 * 24)) * 4).toFixed(
@@ -40,17 +38,11 @@ const Stats = () => {
       );
     };
 
-    contractsOnMarket();
-
     const clientsOnMarket = () => {
       setClients(
         Math.round((today - yearsStart) / (1000 * 60 * 60 * 24) / 3).toFixed(0)
       );
     };
-
-    clientsOnMarket();
-
-    console.log(constarcts);
 
     const countToYear = (liczba) => {
       let count = 0;
@@ -61,7 +53,7 @@ const Stats = () => {
         } else {
           clearInterval(interval);
         }
-      }, 100);
+      }, 200);
     };
 
     const countToContracts = (liczba) => {
@@ -73,7 +65,7 @@ const Stats = () => {
         } else {
           clearInterval(interval);
         }
-      }, 1);
+      }, 10);
     };
 
     const countToClients = (liczba) => {
@@ -81,12 +73,15 @@ const Stats = () => {
       let interval = setInterval(function () {
         if (count <= liczba) {
           setDisplayClients(count);
-          count += 15;
+          count += 10;
         } else {
           clearInterval(interval);
         }
-      }, 1);
+      }, 20);
     };
+    yearsOnMarket();
+    contractsOnMarket();
+    clientsOnMarket();
 
     countToYear(years);
     countToContracts(constarcts);
@@ -102,7 +97,7 @@ const Stats = () => {
     }
   };
 
-  window.addEventListener("scroll", sprawdzPrzewijanie);
+  window.addEventListener("scroll", sprawdzPrzewijanie, { passive: true });
 
   return (
     <StyledContainer id="stats">
