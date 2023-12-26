@@ -58,13 +58,13 @@ const Reputation = () => {
   useEffect(() => {
     let config = {
       method: "get",
-      url: "/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E",
+      url: "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E",
       secure: false,
     };
     const fetchData = async () => {
       const result = await axios(config).then(function (response) {
         setOpinionsObj(response.data.result.reviews);
-        // console.log(response.data.result.reviews);
+        console.log(response.data.result.reviews, config);
         // setOpinionsObj(response.data);
       });
     };
