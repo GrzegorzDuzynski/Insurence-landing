@@ -41,7 +41,7 @@ function SamplePrevArrow(props) {
 
 const Reputation = () => {
   const [opinionsObj, setOpinionsObj] = useState();
-  const [url, setUrl] = useState(false);
+  // const [url, setUrl] = useState();
   const [expandedOpinions, setExpandedOpinions] = useState({});
   const [showFullText, setShowFullText] = useState({});
 
@@ -56,17 +56,28 @@ const Reputation = () => {
     });
   };
 
-  useEffect(() => {
-    ["localhost", "127.0.0.1", ""].includes(window.location.hostname)
-      ? setUrl(
-          "/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E"
-        )
-      : setUrl(
-          "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E"
-        );
-  }, []);
+  // useEffect(() => {
+  //   ["localhost", "127.0.0.1", ""].includes(window.location.hostname)
+  //     ? setUrl(
+  //         "/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E"
+  //       )
+  //     : setUrl(
+  //         "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E"
+  //       );
+  // }, []);
 
   useEffect(() => {
+    const isLocalhost = ["localhost", "127.0.0.1", ""].includes(
+      window.location.hostname
+    );
+    let url = "";
+    isLocalhost
+      ? (url =
+          "/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E")
+      : (url =
+          "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E");
+
+    console.log(url, window.location.hostname);
     let config = {
       method: "get",
       url: url,
