@@ -41,6 +41,7 @@ function SamplePrevArrow(props) {
 
 const Reputation = () => {
   const [opinionsObj, setOpinionsObj] = useState();
+  const [url, setUrl] = useState(false);
   const [expandedOpinions, setExpandedOpinions] = useState({});
   const [showFullText, setShowFullText] = useState({});
 
@@ -56,9 +57,19 @@ const Reputation = () => {
   };
 
   useEffect(() => {
+    ["localhost", "127.0.0.1", ""].includes(window.location.hostname)
+      ? setUrl(
+          "/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E"
+        )
+      : setUrl(
+          "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E"
+        );
+  }, []);
+
+  useEffect(() => {
     let config = {
       method: "get",
-      url: "/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E",
+      url: url,
       // secure: false,
     };
     const fetchData = async () => {
