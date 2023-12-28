@@ -3,9 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import map from "../mapa.png";
-// import Button from "./Button";
-// import Popup from "./Popup";
 
 import "./Contact.css";
 import {
