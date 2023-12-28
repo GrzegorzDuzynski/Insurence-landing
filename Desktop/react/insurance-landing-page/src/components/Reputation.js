@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import GLogo from "./../icon-google.png";
+import api from "./../api.php";
 import axios from "axios";
 import "./Reputation.css";
 import {
@@ -41,7 +42,6 @@ function SamplePrevArrow(props) {
 
 const Reputation = () => {
   const [opinionsObj, setOpinionsObj] = useState();
-  // const [url, setUrl] = useState();
   const [expandedOpinions, setExpandedOpinions] = useState({});
   const [showFullText, setShowFullText] = useState({});
 
@@ -56,23 +56,16 @@ const Reputation = () => {
     });
   };
 
-  // useEffect(() => {
-  //   ["localhost", "127.0.0.1", ""].includes(window.location.hostname)
-  //     ? setUrl(
-  //         "/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E"
-  //       )
-  //     : setUrl(
-  //         "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E"
-  //       );
-  // }, []);
-
   useEffect(() => {
-    const isLocalhost = ["localhost", "127.0.0.1", ""].includes(
-      window.location.hostname
-    );
+    const isLocalhost = [
+      "localhost",
+      "127.0.0.1",
+      "https://zoltypunkt.netlify.app",
+    ].includes(window.location.hostname);
     let url = "";
     isLocalhost
       ? (url =
+          //„https://maps.googleapis.com/maps/api/place” i utwórz linię proxy w pliku package.json a resztę zostaw tutaj
           "/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E")
       : (url =
           "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E");
@@ -93,6 +86,42 @@ const Reputation = () => {
 
     fetchData();
   }, []);
+
+  // "proxy": "https://maps.googleapis.com/maps/api/place",
+
+  // useEffect(() => {
+  //   const isLocalhost = ["localhost", "127.0.0.1", ""].includes(
+  //     window.location.hostname
+  //   );
+  //   let url = "'./../api.php'";
+  // isLocalhost
+  //   ? (url =
+  //       //„https://maps.googleapis.com/maps/api/place” i utwórz linię proxy w pliku package.json a resztę zostaw tutaj
+  //       "/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E")
+  //   : (url =
+  //       "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E");
+
+  // console.log(url, window.location.hostname);
+  // let config = {
+  //   method: "get",
+  //   url: url,
+  //   // secure: false,
+  // };
+  // const fetchData = async () => {
+  //   const result = await axios(config).then(function (response) {
+  //     setOpinionsObj(response.data.result.reviews);
+  //     console.log(response.data.result.reviews, config);
+  //     // setOpinionsObj(response.data);
+  //   });
+  // };
+  // const url = './api.php';
+  //   fetch(url)
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data))
+  //     .catch((error) => console.log(error));
+
+  //   // fetchData();
+  // }, []);
 
   let settings = {
     dots: true,
