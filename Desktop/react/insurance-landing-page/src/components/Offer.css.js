@@ -8,7 +8,7 @@ export const StyledContainer = styled.div`
   align-items: center;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 20px;
   grid-auto-rows: auto;
   @media ${device.tablet} {
