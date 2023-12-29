@@ -5,6 +5,7 @@ import {
   StyledBoxImgPopup,
   StyledBoxPopup,
   StyledBoxText,
+  StyledBoxTextPopup,
   StyledBoxTop,
   StyledButton,
   StyledCard,
@@ -21,15 +22,6 @@ const Offer = () => {
   console.log(showPopup);
   return (
     <StyledContainer id="offer">
-      {/* {showPopup && (
-        <Popup onClick={() => setShowPopup(false)}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-          enim dolorum in cum aliquid et at adipisci, quam earum ullam explicabo
-          quisquam quasi, cupiditate nostrum ratione iure corporis repudiandae
-          quibusdam nesciunt debitis, obcaecati animi porro? Repudiandae sequi
-          aliquid iste omnis?
-        </Popup>
-      )} */}
       {insuranceDescription.map((card, id) => (
         <StyledCard key={id}>
           {showPopup[id] && (
@@ -46,17 +38,10 @@ const Offer = () => {
                 <StyledBoxImgPopup>
                   <img src={card.img} alt={card.title} />
                 </StyledBoxImgPopup>
-                <div
-                  style={{
-                    width: "50%",
-                    display: "flex",
-                    gap: "20px",
-                    flexDirection: "column",
-                  }}
-                >
+                <StyledBoxTextPopup>
                   <StyledTitle>{card.title}</StyledTitle>
                   {parse(card.longText)}
-                </div>
+                </StyledBoxTextPopup>
               </StyledBoxPopup>
             </Popup>
           )}

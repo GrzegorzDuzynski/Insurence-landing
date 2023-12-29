@@ -10,7 +10,6 @@ export const StyledContainer = styled.div`
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: rgba(145, 146, 143, 0.546);
 
   display: flex;
   justify-content: space-between;

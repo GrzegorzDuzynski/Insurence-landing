@@ -70,15 +70,26 @@ export const StyledBoxPopup = styled.div`
   @media ${device.tablet} {
     flex-direction: column;
     align-items: center;
+    padding: 10px;
   }
 `;
 
 export const StyledBoxImgPopup = styled.div`
-  min-height: 50%;
+  /* min-height: 50%; */
   width: 50%;
   @media ${device.tablet} {
     width: 240px;
     height: 240px;
+  }
+`;
+
+export const StyledBoxTextPopup = styled.div`
+  width: 50%;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  @media ${device.tablet} {
+    width: 100%;
   }
 `;
 

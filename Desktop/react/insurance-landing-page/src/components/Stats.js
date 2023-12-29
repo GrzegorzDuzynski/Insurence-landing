@@ -88,7 +88,7 @@ const Stats = () => {
     countToClients(clients);
   }, [scroll]);
 
-  const sprawdzPrzewijanie = () => {
+  const checkScroll = () => {
     let counterElement = document.getElementById("stats");
     let position = counterElement.getBoundingClientRect().top;
 
@@ -97,7 +97,7 @@ const Stats = () => {
     }
   };
 
-  window.addEventListener("scroll", sprawdzPrzewijanie, { passive: true });
+  window.addEventListener("scroll", checkScroll, { passive: true });
 
   return (
     <StyledContainer id="stats">

@@ -20,6 +20,7 @@ import {
 
 const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [scroll, setScroll] = useState(false);
 
   const windowScreen = window;
 
@@ -44,8 +45,22 @@ const Navigation = () => {
       });
   }, [windowScreen]);
 
+  const checkScroll = () => {
+    let counterElement = document.getElementById("offer");
+    let position = counterElement.getBoundingClientRect().top;
+
+    if (position < window.innerHeight) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
+  window.addEventListener("scroll", checkScroll, { passive: true });
   return (
-    <StyledContainer>
+    <StyledContainer
+      style={scroll ? { backgroundColor: "rgba(145, 146, 143, 0.546)" } : {}}
+    >
       <StyledBoxCompany>
         <StyledLink smooth to="/#hero">
           <StyledTitle>Żółty Punkt</StyledTitle>
