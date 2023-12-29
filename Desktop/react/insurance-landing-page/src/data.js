@@ -117,7 +117,7 @@ export const insuranceDescription = [
   },
   {
     id: 3,
-    title: "Ubezpieczenie nieruchmości",
+    title: "Ubezpieczenie nieruchomości",
     img: "https://images.freeimages.com/images/large-previews/af3/home-1230034.jpg",
     shortText:
       "Wybierz jeśli chcesz mieć mniej stresu związanego ze stanem nieruchmości",

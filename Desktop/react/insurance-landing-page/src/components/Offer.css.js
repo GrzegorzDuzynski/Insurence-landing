@@ -63,11 +63,22 @@ export const StyledBoxImg = styled.div`
   }
 `;
 
+export const StyledBoxPopup = styled.div`
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  @media ${device.tablet} {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
 export const StyledBoxImgPopup = styled.div`
-  /* height: 500px; */
+  min-height: 50%;
   width: 50%;
   @media ${device.tablet} {
-    width: 50%;
+    width: 240px;
+    height: 240px;
   }
 `;
 

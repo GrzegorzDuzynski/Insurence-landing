@@ -3,6 +3,7 @@ import {
   StyledBoxBottom,
   StyledBoxImg,
   StyledBoxImgPopup,
+  StyledBoxPopup,
   StyledBoxText,
   StyledBoxTop,
   StyledButton,
@@ -41,14 +42,7 @@ const Offer = () => {
                 ])
               }
             >
-              <div
-                style={{
-                  display: "flex",
-                  gap: "20px",
-                  // flexDirection: "column",
-                  alignItems: "left",
-                }}
-              >
+              <StyledBoxPopup>
                 <StyledBoxImgPopup>
                   <img src={card.img} alt={card.title} />
                 </StyledBoxImgPopup>
@@ -63,7 +57,7 @@ const Offer = () => {
                   <StyledTitle>{card.title}</StyledTitle>
                   {parse(card.longText)}
                 </div>
-              </div>
+              </StyledBoxPopup>
             </Popup>
           )}
           <StyledBoxTop>
