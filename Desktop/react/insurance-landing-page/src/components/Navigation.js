@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import logo from "../LOGO2.png";
+import { faBars, faPhone } from "@fortawesome/free-solid-svg-icons";
+// import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+// import logo from "../LOGO2.png";
 
 import {
   StyledBoxCompany,
@@ -11,6 +12,10 @@ import {
   StyledList,
   StyledListItem,
   StyledTitle,
+  StyledBox,
+  StyledBoxContact,
+  StyledTitleTel,
+  StyledText,
 } from "./Navigation.css";
 
 const Navigation = () => {
@@ -18,14 +23,12 @@ const Navigation = () => {
 
   const windowScreen = window;
 
-  console.log(isNavOpen);
-
   useEffect(() => {
     if (windowScreen.innerWidth >= 768) {
       setIsNavOpen(true);
     }
     windowScreen.addEventListener("resize", () => {
-      if (windowScreen.innerWidth >= 768) {
+      if (windowScreen.innerWidth >= 850) {
         setIsNavOpen(true);
       } else {
         setIsNavOpen(false);
@@ -33,7 +36,7 @@ const Navigation = () => {
     });
     return () =>
       windowScreen.removeEventListener("resize", () => {
-        if (windowScreen.innerWidth >= 768) {
+        if (windowScreen.innerWidth >= 850) {
           setIsNavOpen(true);
         } else {
           setIsNavOpen(false);
@@ -44,10 +47,20 @@ const Navigation = () => {
   return (
     <StyledContainer>
       <StyledBoxCompany>
-        <StyledBoxLogo>
-          <img src={logo} alt="Żółty Punkt" />
-        </StyledBoxLogo>
-        <StyledTitle>Żółty Punkt</StyledTitle>
+        <StyledLink smooth to="/#hero">
+          <StyledTitle>Żółty Punkt</StyledTitle>
+        </StyledLink>
+        <StyledBox>
+          <a href="tel:+48791577679">
+            <StyledBoxContact>
+              <FontAwesomeIcon className="icon" icon={faPhone} />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <StyledTitleTel>791&nbsp;577&nbsp;679</StyledTitleTel>
+                <StyledText>od 10:00 do 18:00</StyledText>
+              </div>
+            </StyledBoxContact>
+          </a>
+        </StyledBox>
       </StyledBoxCompany>
       <div>
         <FontAwesomeIcon
@@ -57,7 +70,7 @@ const Navigation = () => {
         />
 
         {isNavOpen && (
-          <nav>
+          <nav style={{ display: "flex", alignItems: "center" }}>
             <StyledList>
               <StyledListItem>
                 <StyledLink smooth to="/#offer">

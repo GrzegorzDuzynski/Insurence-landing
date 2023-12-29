@@ -3,12 +3,12 @@ import { device } from "../breakpoints";
 
 export const StyledContainer = styled.div`
   width: 100%;
-  padding: 30px;
+  padding: 50px 30px;
   background-color: ${({ theme }) => theme.secondColor};
   display: flex;
   justify-content: space-evenly;
   @media ${device.tablet} {
-    padding: 10px;
+    padding: 70px 10px;
   }
 `;
 export const StyledBoxPlus = styled.div`

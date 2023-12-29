@@ -8,14 +8,12 @@ export const StyledHeaderContainer = styled.div`
   padding: 30px;
 
   display: flex;
-  flex-direction: column;
+  gap: 30px;
   justify-content: center;
   align-items: center;
 
   &::before {
     content: "";
-    /* background-image: url("https://img.freepik.com/free-photo/happy-family-silhouette-sunset_1303-22466.jpg?w=900&t=st=1699984616~exp=1699985216~hmac=a21baa991cbbfbf829683a1214d145db508654006069758efa259be6d333a0c8"); */
-    /* background-image: url("https://img.freepik.com/premium-photo/family-walking-down-path-mountains_662214-18146.jpg?w=740"); */
     background-image: url("https://img.freepik.com/free-photo/family-bonding-sunset-tranquil-jetty-generated-by-ai_188544-33114.jpg?t=st=1700383921~exp=1700387521~hmac=2fdd0d2ea3b2d2f66eb21ef1ce5a9a7bd7d7182a273039e6324418d3aedeca15&w=740");
     background-position: center;
     background-repeat: no-repeat;
@@ -32,14 +30,14 @@ export const StyledHeaderContainer = styled.div`
 `;
 
 export const StyledBox = styled.div`
-  width: 600px;
+  width: 530px;
   position: relative;
 
   display: flex;
   flex-direction: column;
   gap: 30px;
   @media ${device.tablet} {
-    width: 300px;
+    width: 260px;
   }
 `;
 
@@ -80,7 +78,7 @@ export const StyledText = styled.p`
 `;
 
 export const StyledButton = styled.button`
-  width: 80%;
+  width: 100%;
   background-color: transparent;
   color: ${({ theme }) => theme.firstColor};
 
@@ -93,13 +91,11 @@ export const StyledButton = styled.button`
   left: 0;
   bottom: -50px;
   transition: 0.5s ease-in;
-  /* align-self: flex-end; */
   &:hover {
     scale: 1.15;
   }
   @media ${device.tablet} {
     font-size: 12px;
-    /* padding: 8px; */
     border: 1px solid ${({ theme }) => theme.firstColor};
   }
 `;
@@ -142,5 +138,24 @@ export const StyledLink = styled(Link)`
     height: auto;
     opacity: 1;
     width: auto;
+  }
+`;
+
+export const StyledBoxLogo = styled.div`
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StyledBoxLogoAndTitle = styled.div`
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  @media ${device.tablet} {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 `;

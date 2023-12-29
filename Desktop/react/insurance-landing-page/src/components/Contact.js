@@ -177,7 +177,6 @@ const Contact = () => {
                   <span className="span">Statoil/CircleK</span>
                 </StyledTitle>
               </StyledBoxContact>
-
               <a href="tel:+48791577679">
                 <StyledBoxContact>
                   <FontAwesomeIcon className="icon" icon={faPhone} />

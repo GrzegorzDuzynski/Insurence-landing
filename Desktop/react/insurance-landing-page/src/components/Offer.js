@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   StyledBoxBottom,
   StyledBoxImg,
+  StyledBoxImgPopup,
   StyledBoxText,
   StyledBoxTop,
   StyledButton,
@@ -43,16 +44,26 @@ const Offer = () => {
               <div
                 style={{
                   display: "flex",
-                  flexDirection: "column",
+                  gap: "20px",
+                  // flexDirection: "column",
                   alignItems: "left",
                 }}
               >
-                <StyledBoxImg>
+                <StyledBoxImgPopup>
                   <img src={card.img} alt={card.title} />
-                </StyledBoxImg>
-                <StyledTitle>{card.title}</StyledTitle>
+                </StyledBoxImgPopup>
+                <div
+                  style={{
+                    width: "50%",
+                    display: "flex",
+                    gap: "20px",
+                    flexDirection: "column",
+                  }}
+                >
+                  <StyledTitle>{card.title}</StyledTitle>
+                  {parse(card.longText)}
+                </div>
               </div>
-              {parse(card.longText)}
             </Popup>
           )}
           <StyledBoxTop>

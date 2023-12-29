@@ -62,7 +62,6 @@ export const StyledBoxRight = styled.div`
   @media ${device.tablet} {
     height: 150px;
   }
-  /* justify-content: space-around; */
 `;
 export const StyledBoxBlurr = styled.div`
   width: 350px;

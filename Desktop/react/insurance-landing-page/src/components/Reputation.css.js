@@ -4,7 +4,7 @@ import { device } from "../breakpoints";
 
 export const StyledContainer = styled.div`
   width: 100%;
-  padding: 30px;
+  padding: 80px 30px;
   background-color: ${({ theme }) => theme.fiveColor};
 `;
 

@@ -3,8 +3,7 @@ import { device } from "../breakpoints";
 
 export const StyledContainer = styled.div`
   min-height: 100vh;
-  /* position: relative; */
-  padding: 30px;
+  padding: 70px 30px;
   align-items: center;
 
   display: grid;
@@ -61,6 +60,14 @@ export const StyledBoxImg = styled.div`
   @media ${device.tablet} {
     width: 180px;
     height: 180px;
+  }
+`;
+
+export const StyledBoxImgPopup = styled.div`
+  /* height: 500px; */
+  width: 50%;
+  @media ${device.tablet} {
+    width: 50%;
   }
 `;
 
