@@ -164,8 +164,13 @@ const ContactForm = ({ ColorTitlePopup, ColorTextPopup, ColorErrorPopup }) => {
                 formik.errors.consents}
             </StyledTextError>
           </StyledBox>
-          <StyledButton type="submit">Wyślij wiadomość</StyledButton>
-          <StyledButtonRODO onClick={() => setShowPopupRODO(true)}>
+          <StyledButton type="submit" ColorTextPopup={ColorTextPopup}>
+            Wyślij wiadomość
+          </StyledButton>
+          <StyledButtonRODO
+            onClick={() => setShowPopupRODO(true)}
+            ColorTextPopup={ColorTextPopup}
+          >
             Szczegóły RODO i zgód marketingowych
           </StyledButtonRODO>
         </StyledBoxLeft>

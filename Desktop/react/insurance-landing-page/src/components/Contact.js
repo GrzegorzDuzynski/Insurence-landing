@@ -71,7 +71,7 @@ const Contact = () => {
   return (
     <>
       <StyledContainer id="contact">
-        <ContactForm />
+        <ContactForm ColorTitlePopup={"white"} ColorTextPopup={"white"} />
         <StyledBoxMiddle>
           <StyledBoxImg>
             <iframe
