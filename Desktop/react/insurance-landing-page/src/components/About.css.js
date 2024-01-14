@@ -23,7 +23,7 @@ export const StyledImgBox = styled.div`
   box-shadow: 5px 5px 10px 10px rgb(183, 178, 178);
   @media ${device.tablet} {
     width: 280px;
-    height: 280px;
+    height: 230px;
   }
 `;
 

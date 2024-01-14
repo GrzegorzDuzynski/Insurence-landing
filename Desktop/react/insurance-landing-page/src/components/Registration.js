@@ -18,8 +18,8 @@ const Registration = () => {
             Zarejestruję <span className="span">Twoje</span> auto
           </StyledTitle>
           <StyledText>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis,
-            ab.
+            Jeżeli zależy Ci na oszczędzaniu czasu, z przyjemnością dokonam
+            rejestracji Twojego pojazdu.
           </StyledText>
           <StyledButton>
             <StyledLink smooth to="/#contact">

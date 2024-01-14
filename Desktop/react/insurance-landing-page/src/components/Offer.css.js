@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { device } from "../breakpoints";
+import { Link } from "react-router-dom";
 
 export const StyledContainer = styled.div`
   min-height: 100vh;
@@ -64,7 +65,9 @@ export const StyledBoxImg = styled.div`
 `;
 
 export const StyledBoxPopup = styled.div`
+  margin: 0 auto;
   padding: 20px;
+
   display: flex;
   gap: 20px;
   @media ${device.tablet} {
@@ -75,8 +78,8 @@ export const StyledBoxPopup = styled.div`
 `;
 
 export const StyledBoxImgPopup = styled.div`
-  /* min-height: 50%; */
-  width: 50%;
+  height: 350px;
+  width: 300px;
   @media ${device.tablet} {
     width: 240px;
     height: 240px;
@@ -84,7 +87,8 @@ export const StyledBoxImgPopup = styled.div`
 `;
 
 export const StyledBoxTextPopup = styled.div`
-  width: 50%;
+  width: 600px;
+
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -94,6 +98,10 @@ export const StyledBoxTextPopup = styled.div`
 `;
 
 export const StyledBoxText = styled.div``;
+export const StyledBoxTextLi = styled.div`
+  display: flex;
+  gap: 10px;
+`;
 export const StyledBoxBottom = styled.div`
   display: flex;
   flex-direction: column;
@@ -122,6 +130,13 @@ export const StyledText = styled.p`
   }
 `;
 
+export const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
+  height: 12px;
+  width: 12px;
+  background-color: rgb(248, 242, 242);
+  border: 1px solid rgb(214, 208, 208);
+`;
+
 export const StyledButton = styled.button`
   background-color: transparent;
   color: ${({ theme }) => theme.zeroColor};
@@ -139,4 +154,29 @@ export const StyledButton = styled.button`
     font-size: 10px;
     padding: 6px;
   }
+`;
+
+export const StyledButtonContact = styled.button`
+  width: 100%;
+  background-color: transparent;
+  padding: 8px;
+  border: 2px solid ${({ theme }) => theme.firstColor};
+  color: ${({ theme }) => theme.zeroColor};
+  font-weight: 600;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.firstColor};
+    color: ${({ theme }) => theme.zeroColor};
+  }
+  @media ${device.tablet} {
+    font-size: 10px;
+    padding: 6px;
+    border: 1px solid ${({ theme }) => theme.firstColor};
+    font-size: 400;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  color: ${({ theme }) => theme.zeroColor};
 `;

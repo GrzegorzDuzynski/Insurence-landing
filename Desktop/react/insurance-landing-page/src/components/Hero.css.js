@@ -30,7 +30,7 @@ export const StyledHeaderContainer = styled.div`
 `;
 
 export const StyledBox = styled.div`
-  width: 530px;
+  width: 500px;
   position: relative;
 
   display: flex;
@@ -60,7 +60,7 @@ export const StyledBoxAngleText = styled.div`
 
 export const StyledHeaderTitle = styled.h1`
   color: ${({ theme }) => theme.firstColor};
-  font-size: 50px;
+  font-size: 45px;
   letter-spacing: 3px;
   .span {
     color: ${({ theme }) => theme.thirdColor};
@@ -72,6 +72,7 @@ export const StyledHeaderTitle = styled.h1`
 
 export const StyledText = styled.p`
   color: ${({ theme }) => theme.firstColor};
+  /* text-align: justify; */
   @media ${device.tablet} {
     font-size: 12px;
   }

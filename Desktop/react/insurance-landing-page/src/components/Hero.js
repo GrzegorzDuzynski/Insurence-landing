@@ -27,8 +27,8 @@ const Hero = () => {
             Ubezpieczenie na <span className="span">życie</span> to się opłaca
           </StyledHeaderTitle>
           <StyledText>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et,
-            veniam.
+            Ubezpieczenie na życie to finansowe wsparcie dla rodziny po śmierci,
+            umożliwiające spłatę zobowiązań i planowanie przyszłości.
           </StyledText>
           <StyledButton>
             <StyledLink smooth to="/#contact">

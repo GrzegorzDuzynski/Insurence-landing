@@ -1,9 +1,9 @@
 import React from "react";
 import { StyledButton, StyledContainer } from "./Popup.css";
 
-const Popup = ({ children, onClick }) => {
+const Popup = ({ children, onClick, backgroundColor }) => {
   return (
-    <StyledContainer>
+    <StyledContainer backgroundColor={backgroundColor}>
       <StyledButton onClick={onClick}>x</StyledButton>
       {children}
     </StyledContainer>

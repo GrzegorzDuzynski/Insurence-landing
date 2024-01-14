@@ -71,7 +71,6 @@ const Navigation = () => {
               <FontAwesomeIcon className="icon" icon={faPhone} />
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <StyledTitleTel>791&nbsp;577&nbsp;679</StyledTitleTel>
-                <StyledText>od 10:00 do 18:00</StyledText>
               </div>
             </StyledBoxContact>
           </a>
