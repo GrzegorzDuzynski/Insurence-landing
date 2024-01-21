@@ -18,12 +18,12 @@ const Registration = () => {
             Zarejestruję <span className="span">Twoje</span> auto
           </StyledTitle>
           <StyledText>
-            Jeżeli zależy Ci na oszczędzaniu czasu, z przyjemnością dokonam
+            Jeżeli zależy Ci na oszczędzeniu czasu, z przyjemnością dokonam
             rejestracji Twojego pojazdu.
           </StyledText>
           <StyledButton>
             <StyledLink smooth to="/#contact">
-              Porozmawiajmy
+              Napisz do mnie
             </StyledLink>
           </StyledButton>
         </StyledBox>

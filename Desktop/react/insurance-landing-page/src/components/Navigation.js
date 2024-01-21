@@ -63,7 +63,7 @@ const Navigation = () => {
     >
       <StyledBoxCompany>
         <StyledLink smooth to="/#hero">
-          <StyledTitle>Żółty Punkt</StyledTitle>
+          <StyledTitle>ŻÓŁTY PUNKT</StyledTitle>
         </StyledLink>
         <StyledBox>
           <a href="tel:+48791577679">

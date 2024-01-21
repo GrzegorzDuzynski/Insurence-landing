@@ -8,7 +8,7 @@ export const StyledHeaderContainer = styled.div`
   padding: 30px;
 
   display: flex;
-  gap: 30px;
+  /* gap: 30px; */
   justify-content: center;
   align-items: center;
 
@@ -32,6 +32,8 @@ export const StyledHeaderContainer = styled.div`
 export const StyledBox = styled.div`
   width: 500px;
   position: relative;
+  backdrop-filter: blur(20px);
+  padding: 5px;
 
   display: flex;
   flex-direction: column;
@@ -143,8 +145,8 @@ export const StyledLink = styled(Link)`
 `;
 
 export const StyledBoxLogo = styled.div`
-  height: 100px;
-  width: 100px;
+  height: 220px;
+  width: 220px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,7 +157,7 @@ export const StyledBoxLogoAndTitle = styled.div`
   gap: 50px;
   justify-content: center;
   @media ${device.tablet} {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     gap: 20px;
   }

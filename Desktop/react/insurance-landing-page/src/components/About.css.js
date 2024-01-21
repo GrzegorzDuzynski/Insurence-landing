@@ -43,8 +43,8 @@ export const StyledTitle = styled.h1`
   color: ${({ theme }) => theme.firstColor};
   font-size: 50px;
   letter-spacing: 3px;
-  text-shadow: 1px 1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(180, 180, 180),
-    -1px -1px 0 rgb(180, 180, 180), 1px -1px 0 rgb(180, 180, 180);
+  text-shadow: 1px 1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(128, 126, 126),
+    -1px -1px 0 rgb(128, 126, 126), 1px -1px 0 rgb(128, 126, 126);
   font-weight: 400;
   .span {
     color: ${({ theme }) => theme.thirdColor};
@@ -71,8 +71,8 @@ export const StyledButton = styled.button`
   font-weight: 600;
   border-radius: 3px;
   transition: 0.5s ease-in;
-  box-shadow: 1px 1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(180, 180, 180),
-    -1px -1px 0 rgb(180, 180, 180), 1px -1px 0 rgb(180, 180, 180);
+  box-shadow: 1px 1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(143, 141, 141),
+    -1px -1px 0 rgb(143, 141, 141), 1px -1px 0 rgb(143, 141, 141);
 
   align-self: flex-end;
   &:hover {

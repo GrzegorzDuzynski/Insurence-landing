@@ -19,9 +19,9 @@ const Hero = () => {
   return (
     <StyledHeaderContainer id="hero">
       <StyledBoxLogoAndTitle>
-        <StyledBoxLogo>
+        {/* <StyledBoxLogo>
           <img src={logo} alt="Żółty Punkt" />
-        </StyledBoxLogo>
+        </StyledBoxLogo> */}
         <StyledBox>
           <StyledHeaderTitle>
             Ubezpieczenie na <span className="span">życie</span> to się opłaca
@@ -41,6 +41,9 @@ const Hero = () => {
             </StyledLink>
           </StyledButton>
         </StyledBox>
+        <StyledBoxLogo>
+          <img src={logo} alt="Żółty Punkt" />
+        </StyledBoxLogo>
       </StyledBoxLogoAndTitle>
       <StyledLink smooth to="/#offer">
         <StyledBoxAngleText>

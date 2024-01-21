@@ -42,8 +42,8 @@ export const StyledContainer = styled.div`
 export const StyledBoxLeft = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   gap: 30px;
   @media ${device.tablet} {
     gap: 15px;
@@ -84,22 +84,18 @@ export const StyledBoxContact = styled.div`
   gap: 20px;
 `;
 export const StyledInput = styled.input`
-  width: 300px;
+  height: 32px;
+  width: 100%;
   padding: 4px;
   @media ${device.tablet} {
     padding: 2px;
-    width: 260px;
+    width: 100%;
   }
 `;
 
 export const StyledTextArea = styled.textarea`
-  height: 80px;
-  width: 300px;
+  width: 100%;
   padding: 2px;
-
-  @media ${device.tablet} {
-    width: 260px;
-  }
 `;
 
 export const StyledTitle = styled.h1`
@@ -140,7 +136,6 @@ export const StyledTextError = styled.p`
 export const StyledBoxCheckbox = styled.div`
   width: 300px;
   display: flex;
-  /* flex-direction: column; */
   gap: 20px;
   @media ${device.tablet} {
     width: 260px;
@@ -164,7 +159,7 @@ export const StyledText = styled.p`
 export const StyledButton = styled.button`
   width: 100%;
   background-color: transparent;
-  padding: 8px;
+  padding: 10px;
   border: 2px solid ${({ theme }) => theme.firstColor};
   color: ${(props) => props.ColorTextPopup || ((theme) => theme.fiveColor)};
   font-weight: 600;
@@ -175,8 +170,8 @@ export const StyledButton = styled.button`
     color: ${({ theme }) => theme.zeroColor};
   }
   @media ${device.tablet} {
-    font-size: 10px;
-    padding: 6px;
+    font-size: 12px;
+    padding: 8px;
     border: 1px solid ${({ theme }) => theme.firstColor};
     font-size: 400;
   }

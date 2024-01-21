@@ -33,6 +33,7 @@ export const StyledContainer = styled.div`
 export const StyledBoxBlurr = styled.div`
   width: 100%;
   backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,10 +64,10 @@ export const StyledTitle = styled.h1`
 `;
 
 export const StyledText = styled.p`
-  font-size: 12px;
+  font-size: 20px;
   color: ${({ theme }) => theme.fiveColor};
   @media ${device.tablet} {
-    font-size: 10px;
+    font-size: 14px;
   }
 `;
 

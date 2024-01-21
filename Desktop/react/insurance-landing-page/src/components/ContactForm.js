@@ -99,7 +99,7 @@ const ContactForm = ({ ColorTitlePopup, ColorTextPopup, ColorErrorPopup }) => {
           <StyledBox>
             <StyledTextArea
               placeholder="Napisz wiadomość"
-              rows="4"
+              rows="8"
               cols="70"
               name="message"
               value={formik.values.message}
