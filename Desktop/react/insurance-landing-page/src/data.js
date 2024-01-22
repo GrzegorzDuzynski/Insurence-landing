@@ -45,8 +45,8 @@ export const insuranceDescription = [
   {
     id: 1,
     title: "Ubezpieczenia na życie",
-    img: "https://img.freepik.com/free-photo/full-shot-mother-with-kids-nature_23-2150948094.jpg?t=st=1703333663~exp=1703337263~hmac=070b81594e671150a66a25dedce85239bb051e04bc84c833595a18af39d1c0b8&w=1060",
-    alt: "abcd",
+    img: "zycie.jpg",
+    alt: "Image by Sasin Tipchai from Pixabay",
     shortText: "Nigdy nie wiesz kiedy Twoi bliscy będą potrzebować",
     longText: [
       "Śmierć - Świadczenie, w wysokości sumy ubezpieczenia, wypłacane jest w przypadku śmierci ubezpieczonego, bez względu na jej przyczynę.",
@@ -66,8 +66,8 @@ export const insuranceDescription = [
   {
     id: 2,
     title: "Ubezpieczenia komunikacyjne",
-    img: "https://img.freepik.com/free-photo/brand-new-car-ai-generated-image_268835-5688.jpg?t=st=1703333807~exp=1703337407~hmac=7c1f8fef3b6d90207061f619104708067311ed7618821eb62fe569dedd4549ea&w=1060",
-    alt: "Image By vwalakte",
+    img: "car2.jpg",
+    alt: "Obraz Ingo Leukers z Pixabay",
     shortText: "Potrzebujesz jeśli jesteś właścicielem zarejetrowanego pojazdu",
     longText: [
       "OC - ubezpieczenie OC samochodu jest obowiązkowe. Zabezpiecza przed skutkami finansowymi wynikającymi z ewentualnych szkód, wyrządzonych osobom trzecim w związku z ruchem pojazdu. Sposoby zawarcie oraz Sumy Gwarancyjne reguluje Ustawa z 22 maja 2003 roku o ubezpieczeniach obowiązkowych.",
@@ -81,7 +81,8 @@ export const insuranceDescription = [
   {
     id: 3,
     title: "Ubezpieczenie nieruchomości",
-    img: "https://images.freeimages.com/images/large-previews/af3/home-1230034.jpg",
+    img: "house.jpg",
+    alt: "Image by Pexels from Pixabay",
     shortText:
       "Wybierz jeśli chcesz mieć mniej stresu związanego ze stanem nieruchmości",
     longText: [
@@ -98,7 +99,8 @@ export const insuranceDescription = [
   {
     id: 4,
     title: "Ubezpieczenie podróży",
-    img: "https://img.freepik.com/free-photo/beautiful-aerial-shot-florence-italy-architecture-evening_181624-2203.jpg?w=1380&t=st=1700817095~exp=1700817695~hmac=7d2989c8bd4e919fd57952322143675121306c469650cb7a102cc020d3454527",
+    img: "travel.jpg",
+    alt: "Image by Nimrod Oren from Pixabay",
     shortText: "Potrzebujesz jeśli wyjeżdzasz i chcesz odpocząć bez stresu",
     longText: [
       "Koszty leczenia - Towarzystwo Ubezpieczeniowe gwarantuje pokrycie wydatków związanych z leczeniem ambulatoryjnym, szpitalnym, stomatologicznym oraz zakupem leków i środków opatrunkowych. Ważne żeby dobrac odpowiednią Sumę Ubezpieczenia do kraju podróży.",
@@ -111,7 +113,8 @@ export const insuranceDescription = [
   {
     id: 5,
     title: "Ubezpieczenie dla Dziecka",
-    img: "https://img.freepik.com/free-photo/young-family-with-children-autumn-park_1303-25421.jpg?w=1060&t=st=1703333506~exp=1703334106~hmac=066543121dbc76b75ead6b70b4bbb8e1a85b50e2a5de8133ac431527fb8abba4",
+    img: "child.jpg",
+    alt: "Obraz bottomlayercz0 z Pixabay",
     shortText: "Twoje dziecko będzie potrzebować jeśli przydarzy się coś złego",
     longText: [
       "Ubezpieczenie zdrowotne: Zapewnia ochronę zdrowotną, pokrywając koszty leczenia, wizyt lekarskich, badań diagnostycznych, hospitalizacji i leków. Może obejmować także opiekę dentystyczną i okulistyczną.",
@@ -125,7 +128,8 @@ export const insuranceDescription = [
   {
     id: 6,
     title: "Pozostałe ubezpieczenia",
-    img: "https://img.freepik.com/free-photo/man-jump-through-gaps-hills_1150-19693.jpg?w=1060&t=st=1703334156~exp=1703334756~hmac=fea2c5203b82722e1b94038a401815ab0ed2f7432a9e82bfa6f6999486730dbc",
+    img: "inne.jpg",
+    alt: "Image by StockSnap from Pixabay",
     shortText: "Ubezpieczę niemal wszystkie Twoje pomysły i potrzeby ",
     longText: [
       "Auto Assistance - dla wszystkich którzy z jakiegoś powodu nie wykupili tego ubezpieczenia zawierając polisę oc lub ac a wybierają się w podróże dalsze lub bliższe. Możliwość wykupienia polisy nawet do 2500km.      ",

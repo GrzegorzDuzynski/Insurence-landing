@@ -124,6 +124,7 @@ export const StyledTitle = styled.h1`
 
 export const StyledText = styled.p`
   font-size: 14px;
+  text-align: center;
   color: ${({ theme }) => theme.zeroColor};
   @media ${device.tablet} {
     font-size: 9px;
@@ -152,7 +153,7 @@ export const StyledButton = styled.button`
   }
   @media ${device.tablet} {
     font-size: 10px;
-    padding: 6px;
+    padding: 4px;
   }
 `;
 

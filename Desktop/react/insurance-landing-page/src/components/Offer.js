@@ -31,7 +31,7 @@ const Offer = () => {
 
   const reduxState = useSelector((state) => state);
   console.log("Redux:", reduxState);
-
+  console.log("public url: ", process.env.PUBLIC_URL);
   return (
     <StyledContainer id="offer">
       {showSummaryPopup && reduxState.offers.offers && (
@@ -85,7 +85,7 @@ const Offer = () => {
             >
               <StyledBoxPopup>
                 <StyledBoxImgPopup>
-                  <img src={card.img} alt={card.title} />
+                  <img src={`/${card.img}`} alt={card.title} />
                 </StyledBoxImgPopup>
                 <StyledBoxTextPopup>
                   <StyledTitle>{card.title}</StyledTitle>
@@ -134,7 +134,7 @@ const Offer = () => {
           )}
           <StyledBoxTop>
             <StyledBoxImg>
-              <img src={card.img} alt={card.title} />
+              <img src={`/${card.img}`} alt={card.title} />
             </StyledBoxImg>
           </StyledBoxTop>
           <StyledBoxBottom>
