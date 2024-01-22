@@ -30,8 +30,7 @@ const Offer = () => {
   const dispatch = useDispatch();
 
   const reduxState = useSelector((state) => state);
-  console.log("Redux:", reduxState);
-  console.log("public url: ", process.env.PUBLIC_URL);
+
   return (
     <StyledContainer id="offer">
       {showSummaryPopup && reduxState.offers.offers && (
@@ -41,7 +40,9 @@ const Offer = () => {
             dispatch(offersActions.clearOffers());
           }}
         >
-          <StyledTitle>Zakres :{reduxState.offers.offers[0].type}</StyledTitle>
+          <StyledTitle style={{ textAlign: "left" }}>
+            Zakres :{reduxState.offers.offers[0].type}
+          </StyledTitle>
           <ul>
             {reduxState.offers.offers &&
               reduxState.offers.offers.map((offer, id) => (
@@ -59,7 +60,9 @@ const Offer = () => {
                       //   )
                       // }
                     />
-                    <StyledText>{offer.selection}</StyledText>
+                    <StyledText style={{ textAlign: "left" }}>
+                      {offer.selection}
+                    </StyledText>
                   </StyledBoxTextLi>
                 </li>
               ))}
@@ -88,7 +91,9 @@ const Offer = () => {
                   <img src={`/${card.img}`} alt={card.title} />
                 </StyledBoxImgPopup>
                 <StyledBoxTextPopup>
-                  <StyledTitle>{card.title}</StyledTitle>
+                  <StyledTitle style={{ textAlign: "left" }}>
+                    {card.title}
+                  </StyledTitle>
                   <ul
                     style={{
                       display: "flex",
@@ -110,7 +115,9 @@ const Offer = () => {
                               )
                             }
                           />
-                          <StyledText>{text}</StyledText>
+                          <StyledText style={{ textAlign: "left" }}>
+                            {text}
+                          </StyledText>
                         </StyledBoxTextLi>
                       </li>
                     ))}
