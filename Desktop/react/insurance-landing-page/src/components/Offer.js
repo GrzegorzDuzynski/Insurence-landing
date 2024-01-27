@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { offersActions } from "../store";
 import { insuranceDescription } from ".././data";
+
+import useDebounce from "../features/debounce";
 
 import ContactForm from "./ContactForm";
 import {
@@ -27,46 +29,67 @@ import Popup from "./Popup";
 const Offer = () => {
   const [showPopup, setShowPopup] = useState([]);
   const [showSummaryPopup, setShowSummaryPopup] = useState(false);
+  const [titles, setTitles] = useState([]);
   const dispatch = useDispatch();
 
   const reduxState = useSelector((state) => state);
+  console.log("redux:", reduxState);
+
+  useEffect(() => {
+    const uniqueTitleSet = new Set(
+      reduxState.offers.offers.map((item) => item.type)
+    );
+
+    setTitles([...uniqueTitleSet]);
+    console.log(titles);
+  }, [showSummaryPopup]);
 
   return (
     <StyledContainer id="offer">
       {showSummaryPopup && reduxState.offers.offers && (
         <Popup
+          onClickBack={() => {
+            setShowSummaryPopup(false);
+          }}
           onClick={() => {
             setShowSummaryPopup(false);
             dispatch(offersActions.clearOffers());
           }}
         >
-          <StyledTitle style={{ textAlign: "left" }}>
-            Zakres :{reduxState.offers.offers[0].type}
-          </StyledTitle>
-          <ul>
-            {reduxState.offers.offers &&
-              reduxState.offers.offers.map((offer, id) => (
-                <li key={id}>
-                  <StyledBoxTextLi>
-                    <StyledCheckbox
-                      defaultChecked={true}
-                      // onChange={(e) =>
-                      //   dispatch(
-                      //     offersActions.changeSelection({
-                      //       type: reduxState.offers.offers[0].type,
-                      //       selection: offer.selection,
-                      //       value: e.target.checked,
-                      //     })
-                      //   )
-                      // }
-                    />
-                    <StyledText style={{ textAlign: "left" }}>
-                      {offer.selection}
-                    </StyledText>
-                  </StyledBoxTextLi>
-                </li>
-              ))}
-          </ul>
+          {titles.map((title, id) => (
+            <>
+              <StyledTitle key={id} style={{ textAlign: "left" }}>
+                {title}
+              </StyledTitle>
+              <ul>
+                {reduxState.offers.offers &&
+                  reduxState.offers.offers.map((offer, id) =>
+                    title === offer.type ? (
+                      <li key={id}>
+                        <StyledBoxTextLi>
+                          <StyledCheckbox
+                            defaultChecked={true}
+                            onChange={(e) =>
+                              dispatch(
+                                offersActions.changeSelection({
+                                  type: reduxState.offers.offers[0].type,
+                                  selection: offer.selection,
+                                  value: e.target.checked,
+                                })
+                              )
+                            }
+                          />
+                          <StyledText style={{ textAlign: "left" }}>
+                            {offer.selection}
+                          </StyledText>
+                        </StyledBoxTextLi>
+                      </li>
+                    ) : null
+                  )}
+              </ul>
+            </>
+          ))}
+
           <ContactForm
             ColorTitlePopup={"white"}
             ColorErrorPopup={"red"}
@@ -78,13 +101,21 @@ const Offer = () => {
         <StyledCard key={id}>
           {showPopup[id] && (
             <Popup
-              onClick={() =>
+              onClickBack={() => {
                 setShowPopup((prevState) => [
                   ...prevState.slice(0, id),
                   false,
                   ...prevState.slice(id + 1),
-                ])
-              }
+                ]);
+              }}
+              onClick={() => {
+                setShowPopup((prevState) => [
+                  ...prevState.slice(0, id),
+                  false,
+                  ...prevState.slice(id + 1),
+                ]);
+                dispatch(offersActions.clearOffers());
+              }}
             >
               <StyledBoxPopup>
                 <StyledBoxImgPopup>
@@ -114,6 +145,9 @@ const Offer = () => {
                                 })
                               )
                             }
+                            defaultChecked={reduxState.offers.offers.some(
+                              (offer) => offer.selection === text
+                            )}
                           />
                           <StyledText style={{ textAlign: "left" }}>
                             {text}

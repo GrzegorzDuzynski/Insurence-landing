@@ -10,12 +10,16 @@ const offersSlice = createSlice({
   reducers: {
     changeSelection: (state, action) => {
       console.log(action);
-      if (action.payload.value === true)
-        state.offers.push({
-          type: action.payload.type,
-          selection: action.payload.selection,
-        });
-      else {
+      if (action.payload.value === true) {
+        const isSelected = state.offers.find(
+          (offer) => offer.selection === action.payload.selection
+        );
+        if (!isSelected)
+          state.offers.push({
+            type: action.payload.type,
+            selection: action.payload.selection,
+          });
+      } else {
         const newOffers = state.offers.filter(
           (obj) => action.payload.selection !== obj.selection
         );

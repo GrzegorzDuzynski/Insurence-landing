@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import Popup from "./Popup";
 import PopupRODO from "./PopupRODO";
 import { useSelector, useDispatch } from "react-redux";
-import { contactActions } from "../store";
+import { contactActions, offersActions } from "../store";
 import {
   StyledBox,
   StyledBoxCheckbox,
@@ -82,7 +82,11 @@ const ContactForm = ({ ColorTitlePopup, ColorTextPopup, ColorErrorPopup }) => {
     <>
       <form onSubmit={formik.handleSubmit}>
         {showPopup && (
-          <Popup onClick={() => setShowPopup(false)}>
+          <Popup
+            onClick={() => {
+              setShowPopup(false);
+            }}
+          >
             <p>
               Dziekuję za zgłoszenie. Postaram sie odpowiedzieć w ciagu 24h.
             </p>
@@ -90,7 +94,11 @@ const ContactForm = ({ ColorTitlePopup, ColorTextPopup, ColorErrorPopup }) => {
           </Popup>
         )}
         {showPopupRODO && (
-          <PopupRODO onClick={() => setShowPopupRODO(false)}></PopupRODO>
+          <PopupRODO
+            onClick={() => {
+              setShowPopupRODO(false);
+            }}
+          ></PopupRODO>
         )}
         <StyledBoxLeft>
           <StyledTitle ColorTitlePopup={ColorTitlePopup}>
@@ -164,9 +172,11 @@ const ContactForm = ({ ColorTitlePopup, ColorTextPopup, ColorErrorPopup }) => {
                 formik.errors.consents}
             </StyledTextError>
           </StyledBox>
+
           <StyledButton type="submit" ColorTextPopup={ColorTextPopup}>
             Wyślij wiadomość
           </StyledButton>
+
           <StyledButtonRODO
             onClick={() => setShowPopupRODO(true)}
             ColorTextPopup={ColorTextPopup}
