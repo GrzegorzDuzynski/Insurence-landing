@@ -130,6 +130,13 @@ export const StyledText = styled.p`
     font-size: 9px;
   }
 `;
+export const StyledBoxCheckbox = styled.div`
+  height: 14px;
+  width: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
   height: 12px;

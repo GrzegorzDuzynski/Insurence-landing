@@ -8,6 +8,7 @@ import useDebounce from "../features/debounce";
 import ContactForm from "./ContactForm";
 import {
   StyledBoxBottom,
+  StyledBoxCheckbox,
   StyledBoxImg,
   StyledBoxImgPopup,
   StyledBoxPopup,
@@ -67,18 +68,20 @@ const Offer = () => {
                     title === offer.type ? (
                       <li key={id}>
                         <StyledBoxTextLi>
-                          <StyledCheckbox
-                            defaultChecked={true}
-                            onChange={(e) =>
-                              dispatch(
-                                offersActions.changeSelection({
-                                  type: reduxState.offers.offers[0].type,
-                                  selection: offer.selection,
-                                  value: e.target.checked,
-                                })
-                              )
-                            }
-                          />
+                          <StyledBoxCheckbox>
+                            <StyledCheckbox
+                              defaultChecked={true}
+                              onChange={(e) =>
+                                dispatch(
+                                  offersActions.changeSelection({
+                                    type: reduxState.offers.offers[0].type,
+                                    selection: offer.selection,
+                                    value: e.target.checked,
+                                  })
+                                )
+                              }
+                            />
+                          </StyledBoxCheckbox>
                           <StyledText style={{ textAlign: "left" }}>
                             {offer.selection}
                           </StyledText>
@@ -135,20 +138,22 @@ const Offer = () => {
                     {card.longText.map((text, id) => (
                       <li key={id}>
                         <StyledBoxTextLi>
-                          <StyledCheckbox
-                            onChange={(e) =>
-                              dispatch(
-                                offersActions.changeSelection({
-                                  type: card.title,
-                                  selection: text,
-                                  value: e.target.checked,
-                                })
-                              )
-                            }
-                            defaultChecked={reduxState.offers.offers.some(
-                              (offer) => offer.selection === text
-                            )}
-                          />
+                          <StyledBoxCheckbox>
+                            <StyledCheckbox
+                              onChange={(e) =>
+                                dispatch(
+                                  offersActions.changeSelection({
+                                    type: card.title,
+                                    selection: text,
+                                    value: e.target.checked,
+                                  })
+                                )
+                              }
+                              defaultChecked={reduxState.offers.offers.some(
+                                (offer) => offer.selection === text
+                              )}
+                            />
+                          </StyledBoxCheckbox>
                           <StyledText style={{ textAlign: "left" }}>
                             {text}
                           </StyledText>
