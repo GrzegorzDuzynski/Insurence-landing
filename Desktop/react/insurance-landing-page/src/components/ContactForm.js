@@ -25,13 +25,39 @@ import {
   StyledBoxContact,
 } from "./ContactForm.css";
 
-const ContactForm = ({ ColorTitlePopup, ColorTextPopup, ColorErrorPopup }) => {
+const ContactForm = ({ colorTitlePopup, colorTextPopup, colorErrorPopup }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [showPopupRODO, setShowPopupRODO] = useState(false);
-  console.log(ColorTitlePopup);
-  // const reduxState = useSelector((state) => state);
-  // console.log("Redux:", reduxState);
+  console.log(colorTitlePopup);
+  const reduxState = useSelector((state) => state);
+  const reduxjosn = JSON.stringify(reduxState);
+  console.log("Redux:", reduxjosn);
   const dispatch = useDispatch();
+
+  const fetchSubmit = async (formData) => {
+    try {
+      console.log("jestem w try");
+      const response = await fetch(
+        "https://zoltypunkt.kylos.pl/wp-headless/server/wp-json/wp/v2/contact-form2",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      console.log("jestem w try");
+
+      if (response.ok) {
+        console.log(response);
+      } else {
+        console.log(response);
+      }
+    } catch (error) {
+      console.error("Błąd podczas wysyłania danych:", error);
+    }
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -51,14 +77,17 @@ const ContactForm = ({ ColorTitlePopup, ColorTextPopup, ColorErrorPopup }) => {
           consents: formik.values.consents,
         })
       );
+      console.log(reduxState.contact);
+      fetchSubmit(reduxState);
       setShowPopup(true);
-      dispatch(contactActions.clearInfo());
-      resetForm({
-        email: "",
-        message: "",
-        phone: "",
-        consents: false,
-      });
+
+      // dispatch(contactActions.clearInfo());
+      // resetForm({
+      //   email: "",
+      //   message: "",
+      //   phone: "",
+      //   consents: false,
+      // });
     },
 
     validationSchema: Yup.object({
@@ -82,16 +111,55 @@ const ContactForm = ({ ColorTitlePopup, ColorTextPopup, ColorErrorPopup }) => {
     <>
       <form onSubmit={formik.handleSubmit}>
         {showPopup && (
-          <Popup
-            onClick={() => {
-              setShowPopup(false);
+          <div
+            style={{
+              width: "80%",
+              height: "80%",
+              backgroundColor: "white",
+              padding: 30,
+              position: "fixed",
+              overflowY: "auto",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+
+              boxShadow: "3px 3px 7px 7px gray",
+              zIndex: 100,
             }}
           >
-            <p>
-              Dziekuję za zgłoszenie. Postaram sie odpowiedzieć w ciagu 24h.
-            </p>
-            <p>Mariusz </p>
-          </Popup>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <StyledButton
+                style={{ width: 70 }}
+                onClick={() => {
+                  setShowPopup(false);
+                }}
+              >
+                Powrót
+              </StyledButton>
+              <StyledButton
+                style={{ width: 30 }}
+                onClick={() => {
+                  setShowPopup(false);
+                  dispatch(contactActions.clearInfo());
+                  dispatch(offersActions.clearOffers());
+                  formik.resetForm({
+                    email: "",
+                    message: "",
+                    phone: "",
+                    consents: false,
+                  });
+                }}
+              >
+                x
+              </StyledButton>
+            </div>
+            <div style={{ padding: 30 }}>
+              <p>
+                Dziekuję za zgłoszenie. Postaram sie odpowiedzieć w ciagu 24h.
+              </p>
+              <p>Mariusz </p>
+            </div>
+          </div>
         )}
         {showPopupRODO && (
           <PopupRODO
@@ -101,7 +169,7 @@ const ContactForm = ({ ColorTitlePopup, ColorTextPopup, ColorErrorPopup }) => {
           ></PopupRODO>
         )}
         <StyledBoxLeft>
-          <StyledTitle ColorTitlePopup={ColorTitlePopup}>
+          <StyledTitle colortitlepopup={colorTitlePopup}>
             Chętnie przedstawię ofertę
           </StyledTitle>
           <StyledBox>
@@ -115,7 +183,7 @@ const ContactForm = ({ ColorTitlePopup, ColorTextPopup, ColorErrorPopup }) => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             ></StyledTextArea>
-            <StyledTextError ColorErrorPopup={ColorErrorPopup}>
+            <StyledTextError colorErrorPopup={colorErrorPopup}>
               {formik.errors.message &&
                 formik.touched.message &&
                 formik.errors.message}
@@ -131,7 +199,7 @@ const ContactForm = ({ ColorTitlePopup, ColorTextPopup, ColorErrorPopup }) => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
-            <StyledTextError ColorErrorPopup={ColorErrorPopup}>
+            <StyledTextError colorErrorPopup={colorErrorPopup}>
               {formik.errors.phone &&
                 formik.touched.phone &&
                 formik.errors.phone}
@@ -147,7 +215,7 @@ const ContactForm = ({ ColorTitlePopup, ColorTextPopup, ColorErrorPopup }) => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
-            <StyledTextError ColorErrorPopup={ColorErrorPopup}>
+            <StyledTextError colorErrorPopup={colorErrorPopup}>
               {formik.errors.email &&
                 formik.touched.email &&
                 formik.errors.email}
@@ -162,24 +230,24 @@ const ContactForm = ({ ColorTitlePopup, ColorTextPopup, ColorErrorPopup }) => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
-              <StyledText ColorTextPopup={ColorTextPopup}>
+              <StyledText colortextpopup={colorTextPopup}>
                 Zaznaczając wyrażasz zgodę na RODO i zgody marketingowe
               </StyledText>
             </StyledBoxCheckbox>
-            <StyledTextError ColorErrorPopup={ColorErrorPopup}>
+            <StyledTextError colorErrorPopup={colorErrorPopup}>
               {formik.errors.consents &&
                 formik.touched.consents &&
                 formik.errors.consents}
             </StyledTextError>
           </StyledBox>
 
-          <StyledButton type="submit" ColorTextPopup={ColorTextPopup}>
+          <StyledButton type="submit" colortextpopup={colorTextPopup}>
             Wyślij wiadomość
           </StyledButton>
 
           <StyledButtonRODO
             onClick={() => setShowPopupRODO(true)}
-            ColorTextPopup={ColorTextPopup}
+            colortextpopup={colorTextPopup}
           >
             Szczegóły RODO i zgód marketingowych
           </StyledButtonRODO>

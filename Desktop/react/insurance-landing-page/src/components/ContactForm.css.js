@@ -99,7 +99,7 @@ export const StyledTextArea = styled.textarea`
 `;
 
 export const StyledTitle = styled.h1`
-  color: ${(props) => props.ColorTitlePopup || ((theme) => theme.fiveColor)};
+  color: ${(props) => props.colortitlepopup || ((theme) => theme.fiveColor)};
   font-size: 20px;
   font-weight: 800;
   text-align: center;
@@ -124,7 +124,7 @@ export const StyledBoxImg = styled.div`
 
 export const StyledTextError = styled.p`
   font-size: 12px;
-  color: ${(props) => props.ColorErrorPopup || "rgb(212, 249, 65)"};
+  color: ${(props) => props.colorErrorPopup || "rgb(212, 249, 65)"};
   position: absolute;
   left: 0;
   bottom: -20px;
@@ -151,7 +151,7 @@ export const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
 `;
 export const StyledText = styled.p`
   font-size: 12px;
-  color: ${(props) => props.ColorTextPopup || "white"};
+  color: ${(props) => props.colortextpopup || "white"};
   @media ${device.tablet} {
     font-size: 10px;
   }
@@ -161,7 +161,7 @@ export const StyledButton = styled.button`
   background-color: transparent;
   padding: 10px;
   border: 2px solid ${({ theme }) => theme.firstColor};
-  color: ${(props) => props.ColorTextPopup || ((theme) => theme.fiveColor)};
+  color: ${(props) => props.colortextpopup || ((theme) => theme.fiveColor)};
   font-weight: 600;
   border-radius: 3px;
 
@@ -181,7 +181,7 @@ export const StyledButtonRODO = styled.button`
   background-color: transparent;
   /* padding: 8px; */
   border: 2px solid transparent;
-  color: ${(props) => props.ColorTextPopup || ((theme) => theme.fiveColor)};
+  color: ${(props) => props.colortextpopup || ((theme) => theme.fiveColor)};
   &:hover {
     color: ${({ theme }) => theme.firstColor};
   }

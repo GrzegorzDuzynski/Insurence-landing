@@ -27,51 +27,10 @@ import Popup from "./Popup";
 import PopupRODO from "./PopupRODO";
 
 const Contact = () => {
-  const [showPopup, setShowPopup] = useState(false);
-  const [showPopupRODO, setShowPopupRODO] = useState(false);
-
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      message: "",
-      phone: "",
-      consents: false,
-    },
-
-    onSubmit: (values, { resetForm }) => {
-      console.log("onsubmit", values);
-
-      setShowPopup(true);
-      resetForm({
-        email: "",
-        message: "",
-        phone: "",
-        consents: false,
-      });
-    },
-
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .required("Email jest wymagany")
-        .email("Wpisz prawidłowy adres"),
-      message: Yup.string()
-        .required("Pole jest wymagane")
-        .min(3, "Zbyt krótka wiadomość ")
-        .max(220, "Zbyt duga wiadomość"),
-      phone: Yup.string()
-        .required("Pole jest wymagane")
-        .matches(/^\+?\d{6,15}$/, {
-          message: "Wpisz prawidłowy numer.",
-          excludeEmptyString: false,
-        }),
-      consents: Yup.bool().oneOf([true], "Pole jest wymagane"),
-    }),
-  });
-
   return (
     <>
       <StyledContainer id="contact">
-        <ContactForm ColorTitlePopup={"white"} ColorTextPopup={"white"} />
+        <ContactForm colorTitlePopup={"white"} colorTextPopup={"white"} />
         <StyledBoxMiddle>
           <StyledBoxImg>
             <iframe

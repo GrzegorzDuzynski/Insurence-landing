@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import GLogo from "./../icon-google.png";
 import axios from "axios";
 import "./Reputation.css";
+import { loadGoogleMapsPlacesAPI } from "../utils";
 import {
   StyledBigTitle,
   StyledBox,
@@ -56,33 +57,39 @@ const Reputation = () => {
   };
 
   useEffect(() => {
-    const isLocalhost = [
-      "localhost",
-      "127.0.0.1",
-      "https://zoltypunkt.netlify.app",
-    ].includes(window.location.hostname);
-    let url = "";
-    isLocalhost
-      ? (url =
-          //„https://maps.googleapis.com/maps/api/place” i utwórz linię proxy w pliku package.json a resztę zostaw tutaj
-          "/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E")
-      : (url =
-          "/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E");
-    // "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJexDWKjAnGEcRl4EbYC5gvRI&key=AIzaSyAHQzVbDSLvoAP4wJgRQpm7y8XXY1KUV9E");
+    const fetchOpinions = async () => {
+      try {
+        // Załaduj API Google Places
+        const google = await loadGoogleMapsPlacesAPI();
+        const service = new google.maps.places.PlacesService(
+          document.createElement("div")
+        );
 
-    let config = {
-      method: "get",
-      url: url,
-      // secure: false,
-    };
-    const fetchData = async () => {
-      const result = await axios(config).then(function (response) {
-        setOpinionsObj(response.data.result.reviews);
-        // setOpinionsObj(response.data);
-      });
+        // Wykonaj zapytanie o opinie dla określonego miejsca
+        service.getDetails(
+          {
+            placeId: "ChIJexDWKjAnGEcRl4EbYC5gvRI",
+          },
+          (placeResult, status) => {
+            if (
+              status === google.maps.places.PlacesServiceStatus.OK &&
+              placeResult.reviews
+            ) {
+              setOpinionsObj(placeResult.reviews);
+            } else {
+              console.error("Wystąpił błąd podczas pobierania opinii.");
+            }
+          }
+        );
+      } catch (error) {
+        console.error(
+          "Wystąpił błąd podczas ładowania API Google Places:",
+          error
+        );
+      }
     };
 
-    fetchData();
+    fetchOpinions();
   }, []);
 
   let settings = {
