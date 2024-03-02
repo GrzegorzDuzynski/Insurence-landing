@@ -3,12 +3,10 @@ import { cooperators } from "../data";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {
-  StyledBigTitle,
   StyledBox,
   StyledBoxImg,
   StyledBoxOutside,
   StyledContainer,
-  StyledTitle,
 } from "./Cooperations.css";
 import Slider from "react-slick";
 

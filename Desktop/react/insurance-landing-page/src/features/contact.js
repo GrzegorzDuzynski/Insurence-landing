@@ -7,6 +7,7 @@ const initialState = {
       email: "",
       message: "",
       consents: false,
+      ip:""
     },
   ],
 };
@@ -25,6 +26,7 @@ const contactSlice = createSlice({
           email: "",
           message: "",
           consents: false,
+          ip:""
         },
       ];
     },

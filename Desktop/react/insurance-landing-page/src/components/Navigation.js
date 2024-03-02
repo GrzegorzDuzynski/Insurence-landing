@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faPhone } from "@fortawesome/free-solid-svg-icons";
-// import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-// import logo from "../LOGO2.png";
 
 import {
   StyledBoxCompany,
-  StyledBoxLogo,
   StyledContainer,
   StyledLink,
   StyledList,

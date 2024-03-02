@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { offersActions } from "../store";
 import { insuranceDescription } from ".././data";
-
-import useDebounce from "../features/debounce";
-
 import ContactForm from "./ContactForm";
 import {
   StyledBoxBottom,
@@ -21,7 +18,6 @@ import {
   StyledCard,
   StyledCheckbox,
   StyledContainer,
-  StyledLink,
   StyledText,
   StyledTitle,
 } from "./Offer.css";
@@ -38,13 +34,11 @@ const Offer = () => {
 
   useEffect(() => {
     const uniqueTitleSet = new Set(reduxState.offers.map((item) => item.type));
-
     setTitles([...uniqueTitleSet]);
-    console.log(titles);
   }, [showSummaryPopup]);
 
   return (
-    <StyledContainer id="offer">
+    <StyledContainer id="offer" key="1">
       {showSummaryPopup && reduxState.offers && (
         <Popup
           onClickBack={() => {

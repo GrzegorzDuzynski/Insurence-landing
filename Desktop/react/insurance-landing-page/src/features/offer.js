@@ -9,7 +9,6 @@ const offersSlice = createSlice({
   initialState: initialState,
   reducers: {
     changeSelection: (state, action) => {
-      console.log(action);
       if (action.payload.value === true) {
         const isSelected = state.offers.find(
           (offer) => offer.selection === action.payload.selection

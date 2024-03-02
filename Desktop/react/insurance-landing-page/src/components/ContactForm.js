@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import Popup from "./Popup";
@@ -8,35 +8,42 @@ import { contactActions, offersActions } from "../store";
 import {
   StyledBox,
   StyledBoxCheckbox,
-  StyledBoxImg,
   StyledBoxLeft,
-  StyledBoxMiddle,
-  StyledBoxRight,
   StyledButton,
   StyledButtonRODO,
   StyledCheckbox,
-  StyledContainer,
   StyledInput,
   StyledText,
   StyledTextArea,
   StyledTextError,
   StyledTitle,
-  StyledBoxBlurr,
-  StyledBoxContact,
+
 } from "./ContactForm.css";
 
 const ContactForm = ({ colorTitlePopup, colorTextPopup, colorErrorPopup }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [showPopupRODO, setShowPopupRODO] = useState(false);
-  console.log(colorTitlePopup);
+  const [flag, setFlag] = useState(false);
+  const [ipAddress, setIPAddress] = useState('')
   const reduxState = useSelector((state) => state);
-  const reduxjosn = JSON.stringify(reduxState);
-  console.log("Redux:", reduxjosn);
   const dispatch = useDispatch();
 
-  const fetchSubmit = async (formData) => {
+
+  useEffect(() => {
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => setIPAddress(data.ip))
+      .catch(error => console.log(error))
+  }, []);
+
+  useEffect(() => {
+    if (reduxState.contact.contact.email&&flag) {
+         fetchSubmit(reduxState);
+    }
+  }, [reduxState, flag]);
+
+  const fetchSubmit = async (formdata) => {
     try {
-      console.log("jestem w try");
       const response = await fetch(
         "https://zoltypunkt.kylos.pl/wp-headless/server/wp-json/wp/v2/contact-form2",
         {
@@ -44,15 +51,13 @@ const ContactForm = ({ colorTitlePopup, colorTextPopup, colorErrorPopup }) => {
           headers: {
             "Content-Type": "application/json; charset=utf-8",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(formdata),
         }
       );
-      console.log("jestem w try");
-
       if (response.ok) {
-        console.log(response);
+        // console.log(response);
       } else {
-        console.log(response);
+        // console.log(response);
       }
     } catch (error) {
       console.error("Błąd podczas wysyłania danych:", error);
@@ -65,30 +70,23 @@ const ContactForm = ({ colorTitlePopup, colorTextPopup, colorErrorPopup }) => {
       message: "",
       phone: "",
       consents: false,
+      ip:"",
     },
 
-    onSubmit: (values, { resetForm }) => {
-      console.log("onsubmit", values);
+    onSubmit: () => {
       dispatch(
         contactActions.addInfo({
           email: formik.values.email,
           message: formik.values.message,
           phone: formik.values.phone,
           consents: formik.values.consents,
+          ip:ipAddress,
         })
       );
-      console.log(reduxState.contact);
-      fetchSubmit(reduxState);
+      setFlag(true)
       setShowPopup(true);
 
-      // dispatch(contactActions.clearInfo());
-      // resetForm({
-      //   email: "",
-      //   message: "",
-      //   phone: "",
-      //   consents: false,
-      // });
-    },
+     },
 
     validationSchema: Yup.object({
       email: Yup.string()
@@ -96,8 +94,8 @@ const ContactForm = ({ colorTitlePopup, colorTextPopup, colorErrorPopup }) => {
         .email("Wpisz prawidłowy adres"),
       message: Yup.string()
         .required("Pole jest wymagane")
-        .min(3, "Zbyt krótka wiadomość ")
-        .max(220, "Zbyt duga wiadomość"),
+        .min(10, "Zbyt krótka wiadomość ")
+        .max(800, "Zbyt duga wiadomość"),
       phone: Yup.string()
         .required("Pole jest wymagane")
         .matches(/^\+?\d{6,15}$/, {
@@ -107,6 +105,8 @@ const ContactForm = ({ colorTitlePopup, colorTextPopup, colorErrorPopup }) => {
       consents: Yup.bool().oneOf([true], "Pole jest wymagane"),
     }),
   });
+
+  
   return (
     <>
       <form onSubmit={formik.handleSubmit}>
@@ -155,7 +155,7 @@ const ContactForm = ({ colorTitlePopup, colorTextPopup, colorErrorPopup }) => {
             </div>
             <div style={{ padding: 30 }}>
               <p>
-                Dziekuję za zgłoszenie. Postaram sie odpowiedzieć w ciagu 24h.
+              Dziękuję za wysłane zapytanie. Postaram się szybko na nie odpowiedzieć. Zachęcam do kontaktu telefonicznego to znacznie przyspieszy załatwienie sprawy. 
               </p>
               <p>Mariusz </p>
             </div>

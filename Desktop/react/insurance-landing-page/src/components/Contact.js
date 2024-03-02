@@ -1,30 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
-import * as Yup from "yup";
-import { useFormik } from "formik";
 import ContactForm from "./ContactForm";
 import {
-  StyledBox,
-  StyledBoxCheckbox,
   StyledBoxImg,
-  StyledBoxLeft,
   StyledBoxMiddle,
   StyledBoxRight,
-  StyledButton,
-  StyledButtonRODO,
-  StyledCheckbox,
   StyledContainer,
-  StyledInput,
-  StyledText,
-  StyledTextArea,
-  StyledTextError,
   StyledTitle,
   StyledBoxBlurr,
   StyledBoxContact,
 } from "./Contact.css";
-import Popup from "./Popup";
-import PopupRODO from "./PopupRODO";
 
 const Contact = () => {
   return (
@@ -37,10 +23,7 @@ const Contact = () => {
               src="//maps.google.com/maps?output=embed&amp;q=Astronautów 1A, Kielce&amp;t=m&amp;hl=English"
               width="100%"
               height="100%"
-              // style={"border:0"}
-              // allowfullscreen=""
               loading="lazy"
-              // referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </StyledBoxImg>
         </StyledBoxMiddle>
