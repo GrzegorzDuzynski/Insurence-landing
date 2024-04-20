@@ -44,13 +44,15 @@ const ContactForm = ({ colorTitlePopup, colorTextPopup, colorErrorPopup }) => {
 
   const fetchSubmit = async (formdata) => {
     try {
+      const headers = new Headers();
+      headers.append('Content-Type', 'application/json; charset=utf-8');
+      // headers.append('X-Source', 'https://zoltypunkt.pl');
+
       const response = await fetch(
         "https://zoltypunkt.kylos.pl/wp-headless/server/wp-json/wp/v2/contact-form2",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json; charset=utf-8",
-          },
+          headers:headers,
           body: JSON.stringify(formdata),
         }
       );
