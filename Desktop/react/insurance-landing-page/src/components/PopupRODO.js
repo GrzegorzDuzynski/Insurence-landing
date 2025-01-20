@@ -16,10 +16,10 @@ const PopupRODO = ({ onClick }) => {
           1. Administrator i dane kontaktowe administratora oraz Inspektora
           Ochrony Danych.
         </strong>
-        Administratorem danych osobowych jest Firma: Ryszard Sępowicz z siedzibą
+        Administratorem danych osobowych jest Firma: Mariusz Sępowicz z siedzibą
         w Kielcach, adres do korespondencji: 25-341 Kielce, ul. Św.St.Kostki
         7/10. Kontakt z administratorem jest możliwy za pośrednictwem adresu
-        e-mail: biuro@zoltypunkt.pl, telefonicznie pod numerem: 791577679, lub
+        e-mail: mariusz-sepowicz@tlen.pl, telefonicznie pod numerem: 791577679, lub
         pisemnie na wyżej wskazany adres do korespondencji.
       </StyledText>
       <StyledText>
@@ -27,10 +27,10 @@ const PopupRODO = ({ onClick }) => {
           2. Cel przetwarzania danych osobowych oraz podstawa prawna
           przetwarzania.
         </strong>
-        Firma: Ryszard Sępowicz z siedzibą w Kielcach, adres do korespondencji:
+        Firma: Mariusz Sępowicz z siedzibą w Kielcach, adres do korespondencji:
         25-341 Kielce, ul. Św.St.Kostki 7/10. może przetwarzać Pani/Pana dane w
         celu: 1) przedstawienia oferty marketingowej produktu ubezpieczeniowego
-        z oferty współpracujących z Ryszard Sępowicz z siedzibą w Kielcach
+        z oferty współpracujących z Mariusz Sępowicz z siedzibą w Kielcach
         zakładów ubezpieczeń – podstawę do przetwarzania stanowi dobrowolna
         zgoda na przetwarzanie Pani/Pana danych osobowych, w rozumieniu art. 6
         ust. 1 pkt a Rozporządzania Parlamentu Europejskiego i Rady (UE)
@@ -39,36 +39,36 @@ const PopupRODO = ({ onClick }) => {
         przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne
         rozporządzenie o ochronie danych) (Dz.Urz. UE L 119 z 4.05.2016, str. 1)
         – dalej „RODO”. 2) marketingu bezpośredniego usług własnych zakładu
-        ubezpieczeń, z którym ma Pan/Pani zawartą za pośrednictwem firmy Ryszard
+        ubezpieczeń, z którym ma Pan/Pani zawartą za pośrednictwem firmy Mariusz
         Sępowicz z siedzibą w Kielcach umowę ubezpieczenia lub innych usług
-        świadczonych przez firmę Ryszard Sępowicz z siedzibą w Kielcach –
+        świadczonych przez firmę Mariusz Sępowicz z siedzibą w Kielcach –
         podstawę do przetwarzania stanowi niezbędność przetwarzania do
         realizacji celu wynikającego z prawnie uzasadnionego interesu
         administratora w rozumieniu art. 6 ust. 1 pkt f RODO, którym jest
         marketing usług własnych tego zakładu ubezpieczeń, na podstawie
-        powierzonego Ryszard Sępowicz z siedzibą w Kielcach zakresu
+        powierzonego Mariusz Sępowicz z siedzibą w Kielcach zakresu
         przetwarzania danych osobowych przez ten zakład ubezpieczeń oraz
-        marketing usług własnych firmy Ryszard Sępowicz z siedzibą w Kielcach.
+        marketing usług własnych firmy Mariusz Sępowicz z siedzibą w Kielcach.
         3) zawarcia i wykonania umowy ubezpieczenia, w tym dokonania oceny
         ryzyka ubezpieczeniowego - podstawą prawną przetwarzania jest
         niezbędność przetwarzania danych do podjęcia działań na żądanie osoby,
         której dane dotyczą niezbędnych do zawarcia umowy (np. na potrzeby
         wniosku o zawarcie umowy ubezpieczenia) i wykonywania umowy, w
-        rozumieniu art. 6 ust. 1 pkt b RODO, na podstawie powierzonego Ryszard
+        rozumieniu art. 6 ust. 1 pkt b RODO, na podstawie powierzonego Mariusz
         Sępowicz z siedzibą w Kielcach zakresu przetwarzania danych osobowych
         przez współpracujący zakład ubezpieczeń. 4) oceny ryzyka
         ubezpieczeniowego w sposób zautomatyzowany w ramach profilowania
         klientów przed zawarciem umowy - podstawą prawną przetwarzania jest
         niezbędność przetwarzania do realizacji prawnego obowiązku ciążącego na
         zakładzie ubezpieczeń, w rozumieniu art. 6 ust. 1 pkt c RODO, na
-        podstawie powierzonego Ryszard Sępowicz z siedzibą w Kielcach zakresu
+        podstawie powierzonego Mariusz Sępowicz z siedzibą w Kielcach zakresu
         przetwarzania danych osobowych przez współpracujący zakład ubezpieczeń.
         5) wypełnienia obowiązków wynikających z ustawy o rachunkowości -
         podstawą prawną przetwarzania danych jest niezbędność przetwarzania do
-        wypełnienia obowiązku prawnego ciążącego na Ryszard Sępowicz, w
+        wypełnienia obowiązku prawnego ciążącego na Mariusz Sępowicz, w
         rozumieniu art. 6 ust. 1 pkt c RODO. 6) w celach analitycznych, w tym
         profilowania na potrzeby monitorowania i analiz oferty produktów
-        ubezpieczeniowych współpracujących z Ryszard Sępowicz z siedzibą w
+        ubezpieczeniowych współpracujących z Mariusz Sępowicz z siedzibą w
         Kielcach zakładów ubezpieczeń, w celu zapewnienia możliwości
         zaproponowania produktu najbardziej dostosowanego do wymagań i potrzeb
         osoby poszukującej ochrony ubezpieczeniowej – podstawę przetwarzania
@@ -123,15 +123,15 @@ const PopupRODO = ({ onClick }) => {
         <strong>6. Przekazywanie danych.</strong> 1) Pani/Pana dane osobowe mogą
         być udostępnione podmiotom i organom upoważnionym do przetwarzania tych
         danych na podstawie przepisów prawa oraz zakładom ubezpieczeń
-        współpracującym z Ryszard Sępowicz z siedzibą w Kielcach oraz do:
+        współpracującym z Mariusz Sępowicz z siedzibą w Kielcach oraz do:
         Alwis&Secura Sp. z o.o.., jako agenta ubezpieczeniowego (w ramach
         pośrednictwa ubezpieczeniowego); Adamczuk-Serwis Finansowy Grzegorz
         Adamczuk z siedzibą w Siedlcach jako agenta ubezpieczeniowego (w ramach
         pośrednictwa ubezpieczeniowego); ASF PREMIUM sp. z o.o. z siedzibą w
         Siedlcach jako agenta ubezpieczeniowego (w ramach pośrednictwa
-        ubezpieczeniowego); 2) Pani/Pana dane osobowe mogą być przekazywane
+        ubezpieczeniowego);Profi Insurance Sp Z o.o. jako agenta ubezpieczeniowego (w ramach pośrednictwa ubezpieczeniowego); 2) Pani/Pana dane osobowe mogą być przekazywane
         podmiotom przetwarzającym dane osobowe na zlecenie administratora, tj.
-        dostawcom usług IT lub współpracującym z Ryszard Sępowicz z siedzibą w
+        dostawcom usług IT lub współpracującym z Mariusz Sępowicz z siedzibą w
         Kielcach partnerom, w ramach wykonywania przez nich czynności
         agencyjnych, przy czym takie podmioty przetwarzają dane na podstawie
         umowy z administratorem i wyłącznie zgodnie z poleceniami
@@ -162,7 +162,7 @@ const PopupRODO = ({ onClick }) => {
         decyzji, ma Pani/Pan prawo do zakwestionowania tej decyzji, prawo do
         wyrażenia własnego stanowiska oraz wystąpienia o ponowne
         przeanalizowanie Pani/Pana sprawy i podjęcie decyzji przez pracownika
-        zakładu ubezpieczeń współpracującego Ryszard Sępowicz z siedzibą w
+        zakładu ubezpieczeń współpracującego Mariusz Sępowicz z siedzibą w
         Kielcach. 6) Przysługuje Pani/Panu prawo wniesienia skargi do organu
         nadzorczego zajmującego się ochroną danych osobowych w Polsce (Prezesa
         Urzędu Ochrony Danych Osobowych).
@@ -176,7 +176,7 @@ const PopupRODO = ({ onClick }) => {
         </strong>
       </StyledText>
       <StyledText>
-        Zaznaczając wyrażasz zgodę, na otrzymywanie od Ryszard Sępowicz z
+        Zaznaczając wyrażasz zgodę, na otrzymywanie od Mariusz Sępowicz z
         siedzibą w Kielcach informacji handlowej drogą elektroniczną, przy
         wykorzystaniu podanego adresu e-mail lub wiadomosci MMS/SMS na podany
         numer telefonu, w oparciu o art. 10 Ustawy z 18 lipca 2002r., o
@@ -184,7 +184,7 @@ const PopupRODO = ({ onClick }) => {
       </StyledText>
       <StyledText>
         Zaznaczając wyrażasz zgodę, na używanie telekomunikacyjnych urządzeń dla
-        celów marketingu bezpośredniego przez Ryszard Sępowicz z siedzibą w
+        celów marketingu bezpośredniego przez Mariusz Sępowicz z siedzibą w
         Kielcach przy wykorzystaniu podanego numeru telefonu, w oparciu o art.
         172 Ustawy z dnia 16 lipca 2004r., Prawo telekomunikacyjne.
       </StyledText>
