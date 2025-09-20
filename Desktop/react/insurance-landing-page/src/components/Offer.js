@@ -24,7 +24,8 @@ import {
 import Popup from "./Popup";
 
 const Offer = () => {
-  const [showPopup, setShowPopup] = useState([]);
+  const [showPopup, setShowPopup] = useState([false, false, false, false, false, false]);
+  // console.log("showPopup:",showPopup)
   const [showSummaryPopup, setShowSummaryPopup] = useState(false);
   const [titles, setTitles] = useState([]);
   const dispatch = useDispatch();
