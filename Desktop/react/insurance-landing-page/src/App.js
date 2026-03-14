@@ -1,4 +1,5 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
@@ -10,15 +11,13 @@ import Stats from "./components/Stats";
 import Cooperations from "./components/Cooperations";
 import Offer from "./components/Offer";
 import Registration from "./components/Registration";
+import Articles from "./components/Articles";
 
 import "./app.css";
 
-function App() {
+function HomePage() {
   return (
     <>
-      <header>
-        <Navigation />
-      </header>
       <main>
         <Hero />
         <Offer />
@@ -32,6 +31,20 @@ function App() {
       <footer>
         <Footer />
       </footer>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <header>
+        <Navigation />
+      </header>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/artykuly" element={<Articles />} />
+      </Routes>
     </>
   );
 }

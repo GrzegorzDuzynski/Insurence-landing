@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 import "./Stats.css";
 import {
@@ -10,7 +10,7 @@ import {
 } from "./Stats.css";
 
 const Stats = () => {
-  const [yearsStart, setYearsStart] = useState(new Date("2015/12/01"));
+  const [yearsStart] = useState(new Date("2015/12/01"));
   const [years, setYears] = useState(0);
   const [displayYears, setDisplayYears] = useState(0);
   const [scroll, setScroll] = useState(false);
@@ -88,16 +88,20 @@ const Stats = () => {
     countToClients(clients);
   }, [scroll]);
 
-  const checkScroll = () => {
-    let counterElement = document.getElementById("stats");
-    let position = counterElement.getBoundingClientRect().top;
-
+  /* ── Scroll listener in useEffect with cleanup and null check ── */
+  const checkScroll = useCallback(() => {
+    const counterElement = document.getElementById("stats");
+    if (!counterElement) return;
+    const position = counterElement.getBoundingClientRect().top;
     if (position < window.innerHeight) {
       setScroll(true);
     }
-  };
+  }, []);
 
-  window.addEventListener("scroll", checkScroll, { passive: true });
+  useEffect(() => {
+    window.addEventListener("scroll", checkScroll, { passive: true });
+    return () => window.removeEventListener("scroll", checkScroll);
+  }, [checkScroll]);
 
   return (
     <StyledContainer id="stats">

@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faPhone } from "@fortawesome/free-solid-svg-icons";
 
@@ -18,42 +20,49 @@ import {
 const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
+  const location = useLocation();
 
-  const windowScreen = window;
-
+  /* ── Resize listener ── */
   useEffect(() => {
-    if (windowScreen.innerWidth >= 768) {
+    const handleResize = () => {
+      setIsNavOpen(window.innerWidth >= 850);
+    };
+
+    if (window.innerWidth >= 768) {
       setIsNavOpen(true);
     }
-    windowScreen.addEventListener("resize", () => {
-      if (windowScreen.innerWidth >= 850) {
-        setIsNavOpen(true);
-      } else {
-        setIsNavOpen(false);
-      }
-    });
-    return () =>
-      windowScreen.removeEventListener("resize", () => {
-        if (windowScreen.innerWidth >= 850) {
-          setIsNavOpen(true);
-        } else {
-          setIsNavOpen(false);
-        }
-      });
-  }, [windowScreen]);
 
-  const checkScroll = () => {
-    let counterElement = document.getElementById("offer");
-    let position = counterElement.getBoundingClientRect().top;
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    if (position < window.innerHeight) {
-      setScroll(true);
-    } else {
+  /* ── Scroll listener — only on home page ── */
+  const checkScroll = useCallback(() => {
+    if (location.pathname !== "/") {
+      setScroll(false);
+      return;
+    }
+    const counterElement = document.getElementById("offer");
+    if (!counterElement) {
+      setScroll(false);
+      return;
+    }
+    const position = counterElement.getBoundingClientRect().top;
+    setScroll(position < window.innerHeight);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", checkScroll, { passive: true });
+    return () => window.removeEventListener("scroll", checkScroll);
+  }, [checkScroll]);
+
+  /* Reset scroll state when route changes */
+  useEffect(() => {
+    if (location.pathname !== "/") {
       setScroll(false);
     }
-  };
+  }, [location.pathname]);
 
-  window.addEventListener("scroll", checkScroll, { passive: true });
   return (
     <StyledContainer
       style={scroll ? { backgroundColor: "rgba(145, 146, 143, 0.546)" } : {}}
@@ -106,6 +115,14 @@ const Navigation = () => {
               <StyledListItem>
                 <StyledLink smooth to="/#contact">
                   Kontakt
+                </StyledLink>
+              </StyledListItem>
+              {/* NOWA ZAKŁADKA — Artykuły */}
+              <StyledListItem>
+                <StyledLink
+                  to="/artykuly"
+                >
+                  Artykuły
                 </StyledLink>
               </StyledListItem>
             </StyledList>
