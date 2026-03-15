@@ -1,1 +1,3 @@
 /insurance-landing-page/* https://maps.googleapis.com/maps/api/place/:splat 200
+/api/place/*  https://maps.googleapis.com/maps/api/place/:splat  200
+/*    /index.html   200
